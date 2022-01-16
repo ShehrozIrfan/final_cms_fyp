@@ -64,7 +64,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
       }
       .inter-programs, .bs-programs {
         padding: 20px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         margin: 10px;
         border-radius: 5px;
       }

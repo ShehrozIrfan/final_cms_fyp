@@ -62,6 +62,12 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
           color: black;
           text-decoration: none;
       }
+      .chevron-icon {
+          font-size: 25px!important;
+      }
+      .faculty-heading {
+          display: flex;
+      }
       @media(max-width: 600px) {
          .every-top-bg {
              min-height: 120px;
@@ -83,10 +89,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             <div class="accordion" id="accordionExample">
                 <div class="card">
                     <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 DEPARTMENT OF COMPUTER SCIENCE
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -120,10 +129,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                             DEPARTMENT OF ARABIC
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
@@ -147,10 +159,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                             DEPARTMENT OF BOTANY
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -199,10 +214,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingFour">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                             DEPARTMENT OF CHEMISTRY
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
@@ -295,10 +313,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingFive">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
                             DEPARTMENT OF COMMERCE
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
@@ -322,10 +343,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingSix">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
                             DEPARTMENT OF ECONOMICS
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
@@ -404,10 +428,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingSeven">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
                             DEPARTMENT OF EDUCATION
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
@@ -431,10 +458,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading8">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
                             DEPARTMENT OF ENGLISH LANGUAGE & LITERATURE
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordionExample">
@@ -590,10 +620,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading9">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
                             DEPARTMENT OF GEOGRAPHY
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordionExample">
@@ -612,10 +645,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading10">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse10" aria-expanded="true" aria-controls="collapse10">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse10" aria-expanded="true" aria-controls="collapse10">
                             DEPARTMENT OF HISTORY
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse10" class="collapse" aria-labelledby="heading10" data-parent="#accordionExample">
@@ -674,10 +710,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading11">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse11" aria-expanded="true" aria-controls="collapse11">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse11" aria-expanded="true" aria-controls="collapse11">
                             DEPARTMENT OF ISLAMIAT
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordionExample">
@@ -746,10 +785,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading12">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse12" aria-expanded="true" aria-controls="collapse12">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse12" aria-expanded="true" aria-controls="collapse12">
                             DEPARTMENT OF LIBRARY & INFORMATION SCIENCE
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordionExample">
@@ -773,10 +815,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading13">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse13" aria-expanded="true" aria-controls="collapse13">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse13" aria-expanded="true" aria-controls="collapse13">
                             DEPARTMENT OF MATHEMATICS
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse13" class="collapse" aria-labelledby="heading13" data-parent="#accordionExample">
@@ -870,10 +915,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading14">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse14" aria-expanded="true" aria-controls="collapse14">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse14" aria-expanded="true" aria-controls="collapse14">
                             DEPARTMENT OF PERSIAN
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse14" class="collapse" aria-labelledby="heading14" data-parent="#accordionExample">
@@ -897,10 +945,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading15">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse15" aria-expanded="true" aria-controls="collapse15">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse15" aria-expanded="true" aria-controls="collapse15">
                             DEPARTMENT OF PHILOSOPHY
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse15" class="collapse" aria-labelledby="heading15" data-parent="#accordionExample">
@@ -919,10 +970,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading16">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse16" aria-expanded="true" aria-controls="collapse16">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse16" aria-expanded="true" aria-controls="collapse16">
                             DEPARTMENT OF PHYSICAL EDUCATION
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse16" class="collapse" aria-labelledby="heading16" data-parent="#accordionExample">
@@ -961,10 +1015,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading17">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse17" aria-expanded="true" aria-controls="collapse17">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse17" aria-expanded="true" aria-controls="collapse17">
                             DEPARTMENT OF PHYSICS
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse17" class="collapse" aria-labelledby="heading17" data-parent="#accordionExample">
@@ -1053,10 +1110,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading18">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse18" aria-expanded="true" aria-controls="collapse18">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse18" aria-expanded="true" aria-controls="collapse18">
                             DEPARTMENT OF POLITICAL SCIENCE
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse18" class="collapse" aria-labelledby="heading18" data-parent="#accordionExample">
@@ -1105,10 +1165,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading19">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse19" aria-expanded="true" aria-controls="collapse19">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse19" aria-expanded="true" aria-controls="collapse19">
                             DEPARTMENT OF PSYCHOLOGY
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse19" class="collapse" aria-labelledby="heading19" data-parent="#accordionExample">
@@ -1142,10 +1205,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading20">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse20" aria-expanded="true" aria-controls="collapse20">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse20" aria-expanded="true" aria-controls="collapse20">
                             DEPARTMENT OF PUNJABI
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse20" class="collapse" aria-labelledby="heading20" data-parent="#accordionExample">
@@ -1164,10 +1230,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading21">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse21" aria-expanded="true" aria-controls="collapse21">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse21" aria-expanded="true" aria-controls="collapse21">
                             DEPARTMENT OF SOCIAL WORK
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse21" class="collapse" aria-labelledby="heading21" data-parent="#accordionExample">
@@ -1186,10 +1255,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading22">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse22" aria-expanded="true" aria-controls="collapse22">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse22" aria-expanded="true" aria-controls="collapse22">
                             DEPARTMENT OF STAT
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse22" class="collapse" aria-labelledby="heading22" data-parent="#accordionExample">
@@ -1238,10 +1310,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading23">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse23" aria-expanded="true" aria-controls="collapse23">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse23" aria-expanded="true" aria-controls="collapse23">
                             DEPARTMENT OF URDU
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse23" class="collapse" aria-labelledby="heading23" data-parent="#accordionExample">
@@ -1340,10 +1415,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
                 <div class="card">
                     <div class="card-header" id="heading24">
-                        <h2 class="mb-0">
-                            <span class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse24" aria-expanded="true" aria-controls="collapse24">
+                        <h2 class="faculty-heading mb-0">
+                            <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse24" aria-expanded="true" aria-controls="collapse24">
                             DEPARTMENT OF ZOOLOGY
-                            </span>
+                            </div>
+                            <div>
+                                <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                            </div>
                         </h2>
                     </div>
                     <div id="collapse24" class="collapse" aria-labelledby="heading24" data-parent="#accordionExample">
@@ -1384,5 +1462,19 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <?php include 'footer.php' ?><!-- footer ends -->
 
     <script src="./backToTop/backToTop.js"></script>
+    <script>
+        $(document).on('click', '.faculty-heading', function(e) {
+            var elm = $(e.target);
+            var closest = elm.closest('.card-header');
+            var req = closest.find('.chevron-icon');
+            if(req.hasClass('fa-chevron-circle-down')) {
+                req.removeClass('fa-chevron-circle-down');
+                req.addClass('fa-chevron-circle-up');
+            } else {
+                req.removeClass('fa-chevron-circle-up');
+                req.addClass('fa-chevron-circle-down');
+            }
+        })
+    </script>
 </body>
 </html>
