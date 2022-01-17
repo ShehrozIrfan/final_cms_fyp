@@ -16,7 +16,7 @@ if(!isset($_SESSION['login_user']))
         $user_id = $_SESSION['user_id'];
         $query = "SELECT * FROM notices WHERE created_by_id = '$user_id' ORDER BY id DESC";
     }
-    
+
     $result = mysqli_query($connection, $query);
     if(!$result) {
         die("Query Failed .. !" . mysqli_error($connection));
@@ -112,9 +112,14 @@ if(isset($_GET['delete'])) {
                         </tr>
                         <tr>
                             <td>
-                                <div>
+                                <?php $ext_get = pathinfo($row['filename'], PATHINFO_EXTENSION); ?>
+                                <?php if($ext_get == 'pdf'){  ?>
+                                    <div>
+                                        <a href="images/notice-images/<?php echo $row['filename']; ?>" download><?php echo $row['filename']; ?></a>
+                                    </div>
+                                <?php } else { ?>
                                     <a href="images/notice-images/<?php echo $row['filename']; ?>" title="click to download the notice" download><img  src="images/notice-images/<?php echo $row['filename']; ?>" class="img-show-notice"></a>
-                                </div>
+                                <?php } ?>
                             </td>
                         </tr>
                         <tr>

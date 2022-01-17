@@ -20,14 +20,14 @@ if(isset($_POST['create'])) {
     $title = $_POST['title'];
     $date = date('Y-m-d');
 
-    $allowed_extensions = array('png', 'jpeg', 'jpg', 'gif');
+    $allowed_extensions = array('png', 'jpeg', 'jpg', 'gif', 'pdf');
 
     if($_FILES["uploadImage"]["name"] == '') {
         $msg = "Please select a file!";
         $msgClass = "danger";
     }
     else if(!in_array($ext, $allowed_extensions)) {
-        $msg = "Invalid file. Only png, jpeg, jpg, gif are allowed.";
+        $msg = "Invalid file. Only png, jpeg, jpg, gif, pdf are allowed.";
         $msgClass = "danger";
     } else if (trim($title) == '') {
         $msg = "Title can't be blank.";
@@ -129,7 +129,7 @@ if(isset($_POST['update'])) {
     $tempname = $_FILES["uploadImage"]["tmp_name"];
     $folder = "images/notice-images/".$filename;
 
-    $allowed_extensions = array('png', 'jpeg', 'jpg', 'gif');
+    $allowed_extensions = array('png', 'jpeg', 'jpg', 'gif', 'pdf');
 
     if( !empty( trim($title) ) ) {
         if(strlen($title) < 10) {
@@ -143,7 +143,7 @@ if(isset($_POST['update'])) {
             if($update_image) {
                 $ext = pathinfo($filename, PATHINFO_EXTENSION);
                 if(!in_array($ext, $allowed_extensions)) {
-                    $msg = "Invalid file. Only png, jpeg, jpg, gif are allowed.";
+                    $msg = "Invalid file. Only png, jpeg, jpg, gif, pdf are allowed.";
                     $msgClass = "danger";
                 } else {
                     $query = "UPDATE notices SET ";
@@ -176,7 +176,7 @@ if(isset($_POST['update'])) {
                         header("Refresh:1; url=show_notice.php");
                 }
             }
-        } 
+        }
     } else {
         $msg = "Title can't be blank!";
         $msgClass = "danger";
@@ -256,11 +256,19 @@ if(isset($_POST['update'])) {
                         <div class="form-group">
                             <div>
                                 <?php if(isset($_GET['edit'])): ?>
-                                    <img  src="images/notice-images/<?php echo $filename_edit; ?>" class="img-show-news">
+                                    <?php $ext_get = pathinfo($filename_edit, PATHINFO_EXTENSION); ?>
+                                    <?php if($ext_get == 'pdf'){  ?>
+                                        <div class="mb-3">
+                                            <div>Previous uploaded file</div>
+                                            <a href="images/notice-images/<?php echo $filename_edit; ?>" download><?php echo $filename_edit; ?></a>
+                                        </div>
+                                    <?php } else { ?>
+                                        <img  src="images/notice-images/<?php echo $filename_edit; ?>" class="img-show-news">
+                                    <?php } ?>
                                 <?php endif ?>
                             </div>
-                            <label for="image">Upload Image</label>
-                            <input type="file" name="uploadImage" value="" class="form-control" accept="image/*" <?php if(!isset($_GET['edit'])){ ?> required <?php } ?> />
+                            <label for="image">Upload Image or Pdf file</label>
+                            <input type="file" name="uploadImage" value="" class="form-control" accept="" <?php if(!isset($_GET['edit'])){ ?> required <?php } ?> />
                         </div>
                         <div class="form-group">
                             <label for="title">Title</label>

@@ -1,5 +1,5 @@
 <?php include 'session.php' ?>
-<?php 
+<?php
 if(isset($_SESSION['login_user'])) {
     header("location: show_notice.php");
 }
@@ -19,7 +19,7 @@ if(isset($_SESSION['login_blog_user'])) {
     }
 ?>
 
-<?php 
+<?php
 $msg = '';
 $msgClass = '';
 if(isset($_GET['subscribe'])) {
@@ -89,7 +89,7 @@ if(isset($_GET['subscribe'])) {
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./backToTop/backToTop.css">
-    
+
     <style>
         body {
           font-family: 'Poppins', sans-serif;
@@ -135,7 +135,7 @@ if(isset($_GET['subscribe'])) {
         margin: 5px;
         outline: none;
         }
-        
+
         .btn-login span {
             cursor: pointer;
             display: inline-block;
@@ -227,26 +227,42 @@ if(isset($_GET['subscribe'])) {
                         <?php } ?>
                     </div>
                 </diV>
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="row justify-content-center mt-5">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <?php if(mysqli_num_rows($result) == 0) { ?>
                             <div class="text-center alert alert-warning">No notice available!</div>
                         <?php } else { ?>
-                            <?php while($row = mysqli_fetch_array($result)) { ?>
-                            <div class="mb-5 show-notice-img-parent">
-                                <div><h5 class="font-weight-bold show-notice-img" data-toggle="modal" data-target="#noticeImageModal"><?php echo $row['title'];?></h5></div>
-                                <div class="parent-posted-on mb-2">
-                                    <span class="font-weight-bold">Posted on: </span><span class="small"><?php echo $row['date']; ?></span>
-                                </div>
-                                <div class="d-none img-notice">
-                                    <div><img  src="images/notice-images/<?php echo $row['filename']; ?>" class="img-show-notice"></div>
-                                </div>
-                                <div class="mt-3">
-                                    <a href="images/notice-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn-login"><span>Download</span></a>
-                                </div>
-                                <hr>
-                            </div>
-                            <?php } ?>
+                            <table class="table table-bordered table-striped">
+                                <tr class="thead-dark">
+                                    <th>No.</th>
+                                    <th>Notice</th>
+                                    <th>Date Posted</th>
+                                    <th>Download</th>
+                                </tr>
+                                <?php $countNo = 1; ?>
+                                <?php while($row = mysqli_fetch_array($result)) { ?>
+                                <!-- <div class="mb-5 show-notice-img-parent">
+                                    <div><h5 class="font-weight-bold show-notice-img" data-toggle="modal" data-target="#noticeImageModal"><?php echo $row['title'];?></h5></div>
+                                    <div class="parent-posted-on mb-2">
+                                        <span class="font-weight-bold">Posted on: </span><span class="small"><?php echo $row['date']; ?></span>
+                                    </div>
+                                    <div class="d-none img-notice">
+                                        <div><img  src="images/notice-images/<?php echo $row['filename']; ?>" class="img-show-notice"></div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <a href="images/notice-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn-login"><span>Download</span></a>
+                                    </div>
+                                    <hr>
+                                </div> -->
+                                    <tr>
+                                        <td><?php echo $countNo; ?></td>
+                                        <td><?php echo $row['title']; ?>
+                                        <td><?php echo $row['date']; ?>
+                                        <td><a href="images/notice-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn btn-sm btn-dark"><span>Download</span></a></td>
+                                    </tr>
+                                    <?php $countNo = $countNo + 1; ?>
+                                <?php } ?>
+                            </table>
                         <?php } ?>
                 </div>
             </div>
