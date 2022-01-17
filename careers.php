@@ -119,30 +119,50 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         </div>
     <div class="container mt-3 mb-3">
         <div class="">
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-sm-12 col-xs-12">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                 <?php if(mysqli_num_rows($result) == 0) { ?>
                     <div class="text-center alert alert-warning">There are currently no positions vacant. Please contact Registrar's Office for any information.</div>
                 <?php } else { ?>
-                <?php while($row = mysqli_fetch_array($result)){ ?>
-                <div class="parent-news mb-5">
-                    <div class="parent-posted-on">
-                        <span class="font-weight-bold">Posted on: </span><span class="small last_date"><?php echo $row['date']; ?></span>
-                    </div>
-                    <div>
-                        <h2 class="title-show-news"><?php echo $row['title'] ?></h2>
-                    </div>
-                    <div>
-                        <p class="description-show-news"><?php echo $row['description']; ?></p>
-                    </div>
-                    <div>
-                        <a  href="images/career-images/<?php echo $row['filename']; ?>" class="img-show-news file-icon" download><i class="fa fa-file-text fa-2x"></i><span class="pl-2"><?php echo $row['filename'] ?></span></a>
-                    </div>
-                    <div class="parent-posted-on">
-                        <span class="font-weight-bold">Last date to apply: </span><span class="small last_date"><?php echo $row['last_date']; ?></span>
-                    </div>
-                </div>
-                <?php } ?>
+                    <table class="table table-bordered table-striped table-responsive">
+                        <tr class="thead-dark">
+                            <th>No.</th>
+                            <th>Job</th>
+                            <th>Last date to apply</th>
+                            <th>Status</th>
+                            <th>Download details</th>
+                            <th>Apply</th>
+                        </tr>
+                        <?php $countNo = 1; ?>
+                        <?php while($row = mysqli_fetch_array($result)){ ?>
+                            <!-- <div class="parent-news mb-5">
+                                <div class="parent-posted-on">
+                                    <span class="font-weight-bold">Posted on: </span><span class="small last_date"><?php echo $row['date']; ?></span>
+                                </div>
+                                <div>
+                                    <h2 class="title-show-news"><?php echo $row['title'] ?></h2>
+                                </div>
+                                <div>
+                                    <p class="description-show-news"><?php echo $row['description']; ?></p>
+                                </div>
+                                <div>
+                                    <a  href="images/career-images/<?php echo $row['filename']; ?>" class="img-show-news file-icon" download><i class="fa fa-file-text fa-2x"></i><span class="pl-2"><?php echo $row['filename'] ?></span></a>
+                                </div>
+                                <div class="parent-posted-on">
+                                    <span class="font-weight-bold">Last date to apply: </span><span class="small last_date"><?php echo $row['last_date']; ?></span>
+                                </div>
+                            </div> -->
+                            <tr>
+                                <td><?php echo $countNo; ?></td>
+                                <td><?php echo $row['title']; ?>
+                                <td><?php echo $row['last_date']; ?>
+                                <td><?php echo $row['status']; ?></td>
+                                <td><a href="images/career-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn btn-sm btn-dark"><span>Download</span></a></td>
+                                <td><a href="#" class="btn btn-primary btn-sm">Apply Online</a></td>
+                            </tr>
+                            <?php $countNo = $countNo + 1; ?>
+                        <?php } ?>
+                    </table>
                 <?php } ?>
                 </div>
             </div>
@@ -179,9 +199,9 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             </ul>
             <!-- The slideshow -->
             <div class="carousel-inner">
-                <div class="carousel-item active" id="carouselSlideOne">  
+                <div class="carousel-item active" id="carouselSlideOne">
                 </div>
-                <div class="carousel-item" id="carouselSlideTwo"> 
+                <div class="carousel-item" id="carouselSlideTwo">
                 </div>
                 <div class="carousel-item" id="carouselSlideThree">
                 </div>

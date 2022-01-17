@@ -232,7 +232,7 @@ if(isset($_GET['subscribe'])) {
                         <?php if(mysqli_num_rows($result) == 0) { ?>
                             <div class="text-center alert alert-warning">No notice available!</div>
                         <?php } else { ?>
-                            <table class="table table-bordered table-striped">
+                            <table class="table table-bordered table-striped table-responsive">
                                 <tr class="thead-dark">
                                     <th>No.</th>
                                     <th>Notice</th>

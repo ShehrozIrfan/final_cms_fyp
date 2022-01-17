@@ -15,7 +15,7 @@ if(!isset($_SESSION['login_user']))
         $user_id = $_SESSION['user_id'];
         $query = "SELECT * FROM careers WHERE created_by_id = '$user_id' ORDER BY id DESC";
     }
-    
+
     $result = mysqli_query($connection, $query);
     if(!$result) {
         die("Query Failed .. !" . mysqli_error($connection));
@@ -58,7 +58,7 @@ if(isset($_GET['edit'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
     <link rel="stylesheet" href="./backToTop/backToTop.css">
     <style>
         #show_news {
@@ -147,6 +147,9 @@ if(isset($_GET['edit'])) {
                     <tr>
                         <th><span class="font-weight-bold">Last date to apply: </span><span class="small last_date"><?php echo $row['last_date']; ?></span></th>
                     </tr>
+                    <tr>
+                        <th><span class="font-weight-bold">Status: </span><span class="small last_date"><?php echo $row['status']; ?></span></th>
+                    </tr>
                     <?php if(isset($_SESSION['login_user'])): ?>
                         <tr>
                             <td>
@@ -165,7 +168,7 @@ if(isset($_GET['edit'])) {
     </section><!-- section create news ends -->
     <!-- back to top -->
     <a id="back2Top" title="Back to top" href="#"><i class="fa fa-chevron-circle-up"></i></a>
-    
+
     <script src="./backToTop/backToTop.js"></script>
 </body>
 </html>

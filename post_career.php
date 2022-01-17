@@ -18,7 +18,7 @@ if(isset($_POST['create'])) {
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
 
     $tempname = $_FILES["uploadImage"]["tmp_name"];
-    
+
     // $filename = uniqid($filename) . '.' .$ext;
     $filename = time() . "_" . $filename;
 
@@ -27,16 +27,18 @@ if(isset($_POST['create'])) {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $last_date = $_POST['last_date'];
-    $last_date = date("Y-m-d", strtotime($last_date));  
-    
+    $status = $_POST['status'];
+    $last_date = date("Y-m-d", strtotime($last_date));
+
     $_SESSION['title_news'] = $title;
     $_SESSION['title_description'] = $description;
     $_SESSION['last_date'] = $last_date;
-    
+    $_SESSION['career_status'] = $status;
+
     $date = date('Y-m-d');
 
     $allowed_extensions = array('pdf');
-    
+
     if($filename == '') {
         $msg = "Please upload file";
         $msgClass = "danger";
@@ -65,7 +67,7 @@ if(isset($_POST['create'])) {
             }
             else {
                 $user_id = $_SESSION['user_id'];
-                $query = "INSERT INTO careers (filename,title, description, date, created_by_id, last_date) VALUES('$filename','$title', '$description', '$date', '$user_id', '$last_date')";
+                $query = "INSERT INTO careers (filename,title, description, date, created_by_id, last_date, status) VALUES('$filename','$title', '$description', '$date', '$user_id', '$last_date', '$status')";
                 $result = mysqli_query($connection, $query);
                 if(!$result) {
                     die("Query Failed .. !" . mysqli_error($connection));
@@ -95,6 +97,7 @@ if(isset($_GET['edit'])) {
     $filename_edit;
     $title_edit;
     $description_edit;
+    $status_edit;
     $query = "SELECT * FROM careers WHERE id = $id";
     $result = mysqli_query($connection, $query);
     if(!$result) {
@@ -106,6 +109,7 @@ if(isset($_GET['edit'])) {
             $filename_edit = $row['filename'];
             $last_date_apply = $row['last_date'];
             $date = date('Y-m-d');
+            $status_edit = $row['status'];
         }
     }
 }
@@ -118,6 +122,7 @@ if(isset($_POST['update'])) {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $last_date = $_POST['last_date'];
+    $status = $_POST['status'];
 
     $filename = time() . "_" . $filename;
     $tempname = $_FILES["uploadImage"]["tmp_name"];
@@ -153,7 +158,8 @@ if(isset($_POST['update'])) {
                     $query .= "filename = '$filename', ";
                     $query .= "title = '$title', ";
                     $query .= "description = '$description', ";
-                    $query .= "last_date = '$last_date' "; 
+                    $query .= "last_date = '$last_date', ";
+                    $query .= "status = '$status' ";
                     $query .= "WHERE id = $id";
                     $result = mysqli_query($connection, $query);
 
@@ -171,7 +177,8 @@ if(isset($_POST['update'])) {
                 $query = "UPDATE careers SET ";
                 $query .= "title = '$title', ";
                 $query .= "description = '$description', ";
-                $query .= "last_date = '$last_date' "; 
+                $query .= "last_date = '$last_date', ";
+                $query .= "status = '$status' ";
                 $query .= "WHERE id = $id";
                 $result = mysqli_query($connection, $query);
 
@@ -183,7 +190,7 @@ if(isset($_POST['update'])) {
                         header("Refresh:1; url=show_careers.php");
                 }
             }
-        } 
+        }
     } else {
         $msg = "Title and description can't be blank!";
         $msgClass = "danger";
@@ -279,6 +286,13 @@ if(isset($_POST['update'])) {
                         <div class="form-group">
                             <label for="last_date">Last date to apply</label>
                             <input type="date" class="form-control" name="last_date" value="<?php if(isset($_GET['edit'])) { echo $last_date_apply; } ?><?php if(isset($_SESSION['last_date'])) echo $_SESSION['last_date']; ?>" min="<?php echo date('Y-m-d'); ?>" max="2030-12-31">
+                        </div>
+                        <div class="form-group">
+                            <label for="last_date">Status</label>
+                            <select name="status" id="careerStatus" class="form-control" required value="<?php if(isset($_SESSION['career_status'])) echo $_SESSION['career_status']; ?>">
+                                    <option value="Open" selected>Open</option>
+                                    <option value="Closed">Closed</option>
+                            </select>
                         </div>
                         <?php if(isset($_GET['edit'])): ?>
                         <button type="submit" name="update" class="btn btn-warning btn-block">Update Career</button>

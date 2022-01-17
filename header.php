@@ -302,6 +302,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="faculty.php">Faculty</a>
                         <a class="dropdown-item" href="programs_offered.php">Programs Offered</a>
+                        <a class="dropdown-item" href="campus_life.php">Campus Life</a>
                     </div>
                 </li><!-- Dropdown ends -->
                   <li class="nav-item notices">
