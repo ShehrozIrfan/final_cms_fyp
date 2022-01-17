@@ -87,6 +87,9 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
       .last_date {
           font-size: 15px;
       }
+      .table-responsive {
+          border: none;
+      }
         @media(max-width: 767px) {
             .img-gallery {
                 margin-bottom: 30px;
@@ -154,7 +157,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                             </div> -->
                             <tr>
                                 <td><?php echo $countNo; ?></td>
-                                <td><?php echo $row['title']; ?>
+                                <td><?php echo $row['title']; ?></td>
                                 <td><?php echo $row['last_date']; ?>
                                 <td><?php echo $row['status']; ?></td>
                                 <td><a href="images/career-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn btn-sm btn-dark"><span>Download</span></a></td>

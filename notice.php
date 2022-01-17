@@ -190,6 +190,9 @@ if(isset($_GET['subscribe'])) {
       .show-notice-img:hover {
           text-decoration: underline;
       }
+      .table-responsive {
+          border: none;
+      }
       @media(max-width: 600px) {
          .every-top-bg {
              min-height: 120px;
@@ -228,7 +231,7 @@ if(isset($_GET['subscribe'])) {
                     </div>
                 </diV>
                 <div class="row justify-content-center mt-5">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-10 col-sm-12 col-xs-12">
                         <?php if(mysqli_num_rows($result) == 0) { ?>
                             <div class="text-center alert alert-warning">No notice available!</div>
                         <?php } else { ?>
