@@ -88,6 +88,10 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
       .program-heading {
           display: flex;
       }
+      .list-inter-programs {
+          border: 1px solid grey;
+          padding: 25px;
+      }
       @media(max-width: 600px) {
          .every-top-bg {
              min-height: 120px;
@@ -110,20 +114,20 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         </div>
         <div class="container">
             <div class="inter-programs">
-                <h2 class="heading-inter-programs">Intermediate Programs</h2>
+                <h2 class="heading-inter-programs mt-4 mb-4">Intermediate Programs</h2>
                 <p class="text-inter-programs">College is offering following intermediate programs in morning and afternoon classes:</p>
                 <div class="container text-uppercase">
-                    <ol class="list">
-                        <li>Pre Engineering</li>
-                        <li>Pre Medical</li>
-                        <li>ICS-Physics</li>
-                        <li>ICS-Statistics</li>
-                        <li>Humanities(Arts) [Morning Session Only]</li>
-                        <li>Commerce(ICOM)</li>
-                    </ol>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12 col-xs-12 list-inter-programs">Pre Engineering</div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 list-inter-programs">Pre Medical</div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 list-inter-programs">ICS-Physics</div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 list-inter-programs">ICS-Statistics</div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 list-inter-programs">Humanities(Arts) [Morning Session Only]</div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 list-inter-programs">Commerce(ICOM)</div>
+                    </div>
                 </div>
                 <div>
-                    <h2 class="heading-inter-programs pb-2">Intermediate (First & Second Shift)</h2>
+                    <h2 class="heading-inter-programs mt-4 mb-4">Intermediate (First & Second Shift)</h2>
                     <div class="accordion" id="accordionProgramsTop">
                         <div class="card">
                             <div class="card-header" id="headingOne">
@@ -152,7 +156,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                             </div>
                         </div>
                     </div>
-                    <h2 class="heading-inter-programs pt-4">Elective Subjects</h2>
+                    <h2 class="heading-inter-programs mt-4 mb-4">Elective Subjects</h2>
                     <p>Applicants are required to select One Set out of the given Thirty Nine Sets:</p>
                     <div class="accordion" id="accordionPrograms">
                         <!-- set 1 starts -->
@@ -491,37 +495,593 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
             </div>
             <div class="bs-programs">
-                <h2 class="heading-bs">BS 4 YEAR PROGRAMME</h2>
-                <p class="text-bs">The College offers a unique range of BS 4 Year Programs designed to provide students a strong base for their academic and professional careers.</p>
-                <h2 class="heading-mor-shift">Morning Shift</h2>
-                <div class="container text-uppercase">
-                    <ol class="list">
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Information-Technology.html" target="_blank">BS IT</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Physics.html" target="_blank">PHYSICS</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-chemistry.html" target="_blank">CHEMISTRY</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Mathematics.html" target="_blank">MATHEMATICS</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Zoology.html" target="_blank">ZOOLOGY</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-botany.html" target="_blank">BOTANY</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-english.html" target="_blank">ENGLISH</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-economics.html" target="_blank">ECONOMICS</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Statistics.html" target="_blank">STATISTICS</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Political-Science.html" target="_blank">POL. SCIENCE</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-history.html" target="_blank">HISTORY</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Islamic-Studies.html" target="_blank">ISLAMIC STUDIES</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Urdu.html" target="_blank">URDU</a></li>
-                    </ol>
+                <h2 class="heading-bs mb-4">BS 4 YEAR PROGRAMME</h2>
+                <p class="text-bs">The College offers a unique range of BS 4 Year Programs, affiliated with University of the Punjab Lahore, designed to provide students a strong base for their academic and professional careers.</p>
+                <h2 class="heading-mor-shift mt-4 mb-4">Morning Shift</h2>
+                <div class="accordion" id="accordionBs">
+                    <!-- BS-IT -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsOne">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsOne" aria-expanded="true" aria-controls="collapseBsOne">
+                                    Information Technology
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsOne" class="collapse" aria-labelledby="headingBsOne" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Information-Technology.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-IT ends -->
+                    <!-- BS-Physics -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsTwo">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsTwo" aria-expanded="true" aria-controls="collapseBsTwo">
+                                    Physics
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsTwo" class="collapse" aria-labelledby="headingBsTwo" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Physics.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Physics ends -->
+                    <!-- BS-Chemistry -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsThree">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsThree" aria-expanded="true" aria-controls="collapseBsThree">
+                                    Chemistry
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsThree" class="collapse" aria-labelledby="headingBsThree" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-chemistry.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Chemistry ends -->
+                    <!-- BS-Mathematics -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsFour">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsFour" aria-expanded="true" aria-controls="collapseBsFour">
+                                    Mathematics
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsFour" class="collapse" aria-labelledby="headingBsFour" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Mathematics.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Mathematics ends -->
+                    <!-- BS-Zoology -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsFive">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsFive" aria-expanded="true" aria-controls="collapseBsFive">
+                                    Zoology
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsFive" class="collapse" aria-labelledby="headingBsFive" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Zoology.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Zoology ends -->
+                    <!-- BS-Botany -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsSix">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsSix" aria-expanded="true" aria-controls="collapseBsSix">
+                                    Botany
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsSix" class="collapse" aria-labelledby="headingBsSix" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-botany.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Botany ends -->
+                    <!-- BS-English -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsSeven">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsSeven" aria-expanded="true" aria-controls="collapseBsSeven">
+                                    English
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsSeven" class="collapse" aria-labelledby="headingBsSeven" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-english.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-English ends -->
+                    <!-- BS-Economics -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsEight">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsEight" aria-expanded="true" aria-controls="collapseBsEight">
+                                    Economics
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsEight" class="collapse" aria-labelledby="headingBsEight" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-economics.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Economics ends -->
+                    <!-- BS-Statistics -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsTen">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsNine" aria-expanded="true" aria-controls="collapseBsNine">
+                                    Statistics
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsNine" class="collapse" aria-labelledby="headingBsNine" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Statistics.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Statistics ends -->
+                    <!-- BS-Pol. Science -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsTen">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsTen" aria-expanded="true" aria-controls="collapseBsTen">
+                                    Political Science
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsTen" class="collapse" aria-labelledby="headingBsTen" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Political-Science.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Pol. Science ends -->
+                    <!-- BS-History -->
+                    <div class="card">
+                        <div class="card-header" id="headingBs11">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBs11" aria-expanded="true" aria-controls="collapseBs11">
+                                    History
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBs11" class="collapse" aria-labelledby="headingBs11" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-history.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Pol. Science ends -->
+                    <!-- BS-Islamic Studies -->
+                    <div class="card">
+                        <div class="card-header" id="headingBs12">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBs12" aria-expanded="true" aria-controls="collapseBs12">
+                                    Islamic Studies
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBs12" class="collapse" aria-labelledby="headingBs12" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Islamic-Studies.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Islamic Studies ends -->
+                    <!-- BS-Urdu -->
+                    <div class="card">
+                        <div class="card-header" id="headingBs13">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBs13" aria-expanded="true" aria-controls="collapseBs13">
+                                    Urdu
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBs13" class="collapse" aria-labelledby="headingBs13" data-parent="#accordionBs">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Urdu.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Urdu -->
                 </div>
-                <h2 class="heading-eve-shift">Evening Shift</h2>
-                <div class="container">
-                    <ol class="list">
-                    <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Information-Technology.html" target="_blank">BS IT</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Physics.html" target="_blank">PHYSICS</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-chemistry.html" target="_blank">CHEMISTRY</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Mathematics.html" target="_blank">MATHEMATICS</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Zoology.html" target="_blank">ZOOLOGY</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-botany.html" target="_blank">BOTANY</a></li>
-                        <li><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-english.html" target="_blank">ENGLISH</a></li>
-                    </ol>
+                <h2 class="heading-eve-shift mt-4 mb-4">Evening Shift</h2>
+                <div class="accordion" id="accordionBsEve">
+                    <!-- BS-IT -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsEveOne">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsEveOne" aria-expanded="true" aria-controls="collapseBsEveOne">
+                                    Information Technology
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsEveOne" class="collapse" aria-labelledby="headingBsEveOne" data-parent="#accordionBsEve">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Information-Technology.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-IT ends -->
+                    <!-- BS-Physics -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsEveTwo">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsEveTwo" aria-expanded="true" aria-controls="collapseBsEveTwo">
+                                    Physics
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsEveTwo" class="collapse" aria-labelledby="headingBsEveTwo" data-parent="#accordionBsEve">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Physics.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Physics ends -->
+                    <!-- BS-Chemistry -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsEveThree">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsEveThree" aria-expanded="true" aria-controls="collapseBsEveThree">
+                                    Chemistry
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsEveThree" class="collapse" aria-labelledby="headingBsEveThree" data-parent="#accordionBsEve">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-chemistry.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Chemistry ends -->
+                    <!-- BS-Mathematics -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsEveFour">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsEveFour" aria-expanded="true" aria-controls="collapseBsEveFour">
+                                    Mathematics
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsEveFour" class="collapse" aria-labelledby="headingBsEveFour" data-parent="#accordionBsEve">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Mathematics.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Mathematics ends -->
+                    <!-- BS-Zoology -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsEveSix">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsEveSix" aria-expanded="true" aria-controls="collapseBsEveSix">
+                                    Zoology
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsEveSix" class="collapse" aria-labelledby="headingBsEveSix" data-parent="#accordionBsEve">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-Zoology.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Zoology ends -->
+                    <!-- BS-Botany -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsSeven">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsSeven" aria-expanded="true" aria-controls="collapseBsSeven">
+                                    Botany
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsSeven" class="collapse" aria-labelledby="headingBsSeven" data-parent="#accordionBsEve">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-botany.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-Botany ends -->
+                    <!-- BS-English -->
+                    <div class="card">
+                        <div class="card-header" id="headingBsEveEight">
+                            <h2 class="mb-0 program-heading">
+                                <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseBsEveEight" aria-expanded="true" aria-controls="collapseBsEveEight">
+                                    English
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-circle-down chevron-icon"></i>
+                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseBsEveEight" class="collapse" aria-labelledby="headingBsEveEight" data-parent="#accordionBsEve">
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Total Seats</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>For further details about the program, please click the details button.</td>
+                                            <td><a href="http://pu.edu.pk/home/bs4yearsdegree/BS-4Years-english.html" target="_blank" class="btn btn-sm btn-dark">Details</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- BS-English ends -->
                 </div>
             </div>
         </div>
