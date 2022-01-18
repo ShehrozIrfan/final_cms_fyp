@@ -264,8 +264,9 @@
                         <span class="fa fa-caret-down text-white"></span>
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="about.php">About Us</a>
                     <a class="dropdown-item" href="principal_message.php">Principal Message</a>
+                    <a class="dropdown-item" href="about.php">About us</a>
+                    <a class="dropdown-item" href="history.php">Brief History</a>
                     </div>
                 </li><!-- Dropdown ends -->
                 <!-- Dropdown -->
