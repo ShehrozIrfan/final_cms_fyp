@@ -6,7 +6,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 }
 ?>
 <?php
-//getting the first latest article 
+//getting the first latest article
 $filename_latest = '';
 $title_latest = '';
 $description_latest = '';
@@ -27,7 +27,7 @@ if(!$result_latest) {
     }
 }
 ?>
-<?php 
+<?php
 //getting all the articles
 $query = "SELECT * FROM blog_articles WHERE status= 'approved' ORDER BY id DESC";
 $result_all = mysqli_query($connection, $query);
@@ -51,6 +51,9 @@ if(!$result_all) {
     <style>
         #blog {
             margin-top: 95px;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
         }
         .blog-headline-parent {
             /* padding-top: 150px; */
@@ -80,7 +83,7 @@ if(!$result_all) {
             margin: 5px;
             outline: none;
         }
-        
+
         .btn-login span {
             cursor: pointer;
             display: inline-block;
@@ -124,7 +127,7 @@ if(!$result_all) {
             border: none;
             background: none;
         }
-        
+
         .cta:before {
             content: "";
             position: absolute;
@@ -137,7 +140,7 @@ if(!$result_all) {
             height: 45px;
             transition: all 0.3s ease;
         }
-        
+
         .cta span {
             position: relative;
             font-family: "Ubuntu", sans-serif;
@@ -146,7 +149,7 @@ if(!$result_all) {
             letter-spacing: 0.05em;
             color: black;
         }
-        
+
         .cta svg {
             position: relative;
             top: 0;
@@ -159,16 +162,16 @@ if(!$result_all) {
             transform: translateX(-5px);
             transition: all 0.3s ease;
         }
-        
+
         .cta:hover:before {
             width: 100%;
             background: #ff9000;
         }
-        
+
         .cta:hover svg {
             transform: translateX(0);
         }
-        
+
         .cta:active {
             transform: scale(0.95);
         }
@@ -320,7 +323,7 @@ if(!$result_all) {
                                                 $row = mysqli_fetch_array($result_q);
                                         ?>
                                         <h5>By: <?php echo $row['username']; ?>, <?php echo $row['status']; ?> of <?php echo $row['department']; ?> department, at GIGCCL. </h5>
-                                        <?php } ?>        
+                                        <?php } ?>
                                         <h6>Posted on: <?php echo $date_latest; ?></h6>
                                         <a href="blog_specific.php?id=<?php echo $id_latest; ?>" class="btn-login" style="text-decoration: none;">
                                             <span>Read</span>

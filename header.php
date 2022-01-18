@@ -269,6 +269,34 @@
                     </div>
                 </li><!-- Dropdown ends -->
                 <!-- Dropdown -->
+                <li class="nav-item center-nav-item dropdown">
+                    <a class="nav-link">
+                        <a href="#" class="text-white nav-link">ACADEMICS</a>
+                        <span class="fa fa-caret-down text-white"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="faculty.php">Faculty</a>
+                        <a class="dropdown-item" href="programs_offered.php">Programs Offered</a>
+                        <a class="dropdown-item" href="campus_life.php">Campus Life</a>
+                    </div>
+                </li><!-- Dropdown ends -->
+                <li class="nav-item notices">
+                    <a class="nav-link" href="notice.php"><!-- <i class="fa fa-bell mr-2"></i> -->NOTICES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="show_all_news.php"><!-- <i class="fa fa-sticky-note mr-2"></i> -->NEWS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="careers.php">CAREERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.php"><!-- <i class="fa fa-envelope mr-2"></i> --> CONTACT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="downloads.php">DOWNLOADS</a>
+                </li>
+                <!-- Dropdown -->
                 <li class="nav-item dropdown center-nav-item">
                     <a class="nav-link">
                         <a href="#" class="text-white nav-link">MANAGEMENT</a>
@@ -282,6 +310,9 @@
                     <a class="dropdown-item" href="#">Hostel Management</a>
                     </div>
                 </li><!-- Dropdown ends -->
+                <li class="nav-item pl-3">
+                    <a class="nav-link" href="research.php">RESEARCH</a>
+                </li>
                 <!-- Dropdown -->
                 <li class="nav-item center-nav-item dropdown">
                     <a class="nav-link">
@@ -293,37 +324,6 @@
                     <a class="dropdown-item" href="signup_blog.php">Signup</a>
                     </div>
                 </li><!-- Dropdown ends -->
-                <!-- Dropdown -->
-                <li class="nav-item center-nav-item dropdown">
-                    <a class="nav-link">
-                        <a href="#" class="text-white nav-link">ACADEMICS</a>
-                        <span class="fa fa-caret-down text-white"></span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="faculty.php">Faculty</a>
-                        <a class="dropdown-item" href="programs_offered.php">Programs Offered</a>
-                        <a class="dropdown-item" href="campus_life.php">Campus Life</a>
-                    </div>
-                </li><!-- Dropdown ends -->
-                  <li class="nav-item notices">
-                    <a class="nav-link" href="notice.php"><!-- <i class="fa fa-bell mr-2"></i> -->NOTICES</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="show_all_news.php"><!-- <i class="fa fa-sticky-note mr-2"></i> -->NEWS</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="careers.php">CAREERS</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="research.php">RESEARCH</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact.php"><!-- <i class="fa fa-envelope mr-2"></i> --> CONTACT</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="downloads.php">DOWNLOADS</a>
-                  </li>
                   <li class="nav-item mr-5 d-none">
                     <a class="nav-link nav-link-login" href="login.php" id="loginBtn"><i class="fa fa-sign-in mr-2"></i>Login</a>
                   </li>
