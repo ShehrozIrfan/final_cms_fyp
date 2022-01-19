@@ -19,6 +19,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="./backToTop/backToTop.css">
+    <link rel="stylesheet" href="./assets/styles/animations.css">
     <style>
       /* Global */
       body {
@@ -85,7 +86,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                     <a class="to-download" href="assets/downloads-page/Admission Steps.pdf" download>GIGCCL Admission Steps</a>
                                 </td>
                             </tr>
-                        </table>                        
+                        </table>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12 mt-4 mb-4">
@@ -99,7 +100,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                     <a class="to-download" href="assets/downloads-page/Bulletins.pdf" download>FARANIAN, College News Bulletin, October 2021 to December 2021.</a>
                                 </td>
                             </tr>
-                        </table>                        
+                        </table>
                     </div>
                 </div>
             </div>

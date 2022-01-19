@@ -52,7 +52,7 @@ if(isset($_POST['contact'])) {
 
 }
 ?>
-<?php 
+<?php
 $msg_unsub = '';
 $msgClass_unsub = '';
 if(isset($_GET['unsubscribe'])) {
@@ -129,6 +129,10 @@ if(isset($_GET['unsubscribe'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./backToTop/backToTop.css">
+    <link rel="stylesheet" href="./assets/styles/animations.css">
+
     <style>
         /* Global */
         * {
@@ -156,7 +160,7 @@ if(isset($_GET['unsubscribe'])) {
         #contact {
             /* padding-top: 150px; */
             /* padding-top: 50px; */
-            background: #F0F9FC;
+            /* background: #F0F9FC; */
             margin-top: 95px;
         }
         .contact_text {
@@ -168,7 +172,7 @@ if(isset($_GET['unsubscribe'])) {
         }
 
         .bg-contact-info {
-            background: #F0F9FC;
+            /* background: #F0F9FC; */
             padding-bottom: 50px;
         }
         .btn-send {
@@ -185,7 +189,7 @@ if(isset($_GET['unsubscribe'])) {
             margin: 5px;
             outline: none;
         }
-        
+
         .btn-send span {
             cursor: pointer;
             display: inline-block;
@@ -403,6 +407,9 @@ if(isset($_GET['unsubscribe'])) {
         </div>
     </section><!-- contact section ends -->
 
+    <!-- back to top -->
+    <a id="back2Top" title="Back to top" href="#"><i class="fa fa-chevron-circle-up"></i></a>
     <?php include 'footer.php' ?>
+    <script src="./backToTop/backToTop.js"></script>
 </body>
 </html>

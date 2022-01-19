@@ -19,6 +19,8 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="./backToTop/backToTop.css">
+    <link rel="stylesheet" href="./assets/styles/animations.css">
+
     <style>
       /* Global */
       body {
@@ -115,7 +117,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                     </a>
                                 </td>
                             </tr>
-                        </table>                        
+                        </table>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 mt-4 mb-4">
@@ -128,7 +130,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                     </a>
                                 </td>
                             </tr>
-                        </table>                        
+                        </table>
                     </div>
                 </div>
             </div>
@@ -151,7 +153,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                     <p class="font-weight-bold small text-center">By: <span>Asim Farooq Sheikh</span></p>
                                 </td>
                             </tr>
-                        </table>                        
+                        </table>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 mt-4 mb-4">
@@ -169,7 +171,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                     <p class="font-weight-bold small text-center">By: <span>Prof. Dr. Kashif Firaz Ahmed &amp; Prof. Syed Mohsin Bukhari</span></p>
                                 </td>
                             </tr>
-                        </table>                        
+                        </table>
                     </div>
             </div>
         </div>

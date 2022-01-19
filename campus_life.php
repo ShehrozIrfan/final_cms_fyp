@@ -24,6 +24,7 @@ if(isset($_SESSION['login_blog_user'])) {
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./backToTop/backToTop.css">
+    <link rel="stylesheet" href="./assets/styles/animations.css">
 
     <style>
         body {

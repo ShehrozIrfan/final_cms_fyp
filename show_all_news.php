@@ -25,6 +25,8 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./backToTop/backToTop.css">
+    <link rel="stylesheet" href="./assets/styles/animations.css">
+
     <style>
         #show_news {
             margin-top: 95px;
@@ -169,9 +171,9 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             </ul>
             <!-- The slideshow -->
             <div class="carousel-inner">
-                <div class="carousel-item active" id="carouselSlideOne">  
+                <div class="carousel-item active" id="carouselSlideOne">
                 </div>
-                <div class="carousel-item" id="carouselSlideTwo"> 
+                <div class="carousel-item" id="carouselSlideTwo">
                 </div>
                 <div class="carousel-item" id="carouselSlideThree">
                 </div>

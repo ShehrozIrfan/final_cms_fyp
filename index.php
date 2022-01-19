@@ -18,7 +18,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         die("Query Failed .. !" . mysqli_error($connection));
     }
 ?>
-<?php 
+<?php
     //Getting top 3 blog articles
     $query_blog = "SELECT * FROM blog_articles WHERE status= 'approved' ORDER BY id DESC LIMIT 3";
     $result_blog = mysqli_query($connection, $query_blog);
@@ -27,7 +27,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         die("Query Failed .. !" . mysqli_error($connection));
     }
 ?>
-<?php 
+<?php
     //Getting top 3 careers
     $query_careers = "SELECT * FROM careers ORDER BY id DESC LIMIT 3";
     $result_careers = mysqli_query($connection, $query_careers);
@@ -49,6 +49,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="./backToTop/backToTop.css">
+    <link rel="stylesheet" href="./assets/styles/animations.css">
     <style>
         /* Global */
         * {
@@ -109,7 +110,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             border: none;
             background: none;
         }
-        
+
         .cta:before {
             content: "";
             position: absolute;
@@ -122,7 +123,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             height: 45px;
             transition: all 0.3s ease;
         }
-        
+
         .cta span {
             position: relative;
             font-family: "Ubuntu", sans-serif;
@@ -131,7 +132,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             letter-spacing: 0.05em;
             color: black;
         }
-        
+
         .cta svg {
             position: relative;
             top: 0;
@@ -144,16 +145,16 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             transform: translateX(-5px);
             transition: all 0.3s ease;
         }
-        
+
         .cta:hover:before {
             width: 100%;
             background: #ff9000;
         }
-        
+
         .cta:hover svg {
             transform: translateX(0);
         }
-        
+
         .cta:active {
             transform: scale(0.95);
         }
@@ -331,7 +332,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             margin: 5px;
             outline: none;
         }
-        
+
         .btn-login span {
             cursor: pointer;
             display: inline-block;
@@ -414,6 +415,9 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             .popup-notifications {
                 margin-top: 50px;
             }
+            .carousel-item {
+                height: auto!important;
+            }
         }
 
         @media (max-width: 560px) {
@@ -483,13 +487,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="width:100%;" src="assets/images/slider-img.jpg">
+                    <img style="width:100%; height: 90vh;" src="assets/images/slider-img.jpg">
                 </div>
                 <div class="carousel-item">
-                    <img style="width:100%;" src="assets/images/slider-img.jpg">
+                    <img style="width:100%; height: 90vh;" src="assets/images/slider-img-sports.jpeg">
                 </div>
                 <div class="carousel-item">
-                    <img style="width:100%;" src="assets/images/slider-img.jpg">
+                    <img style="width:100%; height: 90vh;" src="assets/images/slider-img-mosque.jpeg">
                 </div>
             </div>
             <!-- Left and right controls -->
@@ -523,7 +527,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                         </div>
                   </div>
                   <div class="col-md-6 col-sm-12 col-xs-12 popup-notifications">
-                    <?php if(mysqli_num_rows($result_popup) != 0){ ?> 
+                    <?php if(mysqli_num_rows($result_popup) != 0){ ?>
                         <?php while($row = mysqli_fetch_array($result_popup)) { ?>
                             <div class="alert alert-warning text-center alert-dismissible">
                                 <a href="news.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: black;" class="small" target="_blank">
@@ -535,7 +539,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                             </div>
                         <?php } ?>
                     <?php } ?>
-                    <?php if(mysqli_num_rows($result_blog_popup) != 0){ ?> 
+                    <?php if(mysqli_num_rows($result_blog_popup) != 0){ ?>
                         <?php while($row = mysqli_fetch_array($result_blog_popup)) { ?>
                             <div class="alert alert-warning text-center alert-dismissible">
                                 <a href="blog_specific.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: black;" class="small" target="_blank">
@@ -585,7 +589,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
           <div class="row justify-content-center">
             <?php if(mysqli_num_rows($result)== 0){ ?>
                 <div class="col-md-6 text-center alert alert-warning">No news found!</div>
-            <?php } else { ?>  
+            <?php } else { ?>
             <?php while($row = mysqli_fetch_array($result)) { ?>
               <div class="col-md-4 col-sm-12 col-xs-12 index-news" >
                 <div class="index-news-inner">
@@ -624,7 +628,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
           <div class="row justify-content-center">
             <?php if(mysqli_num_rows($result_blog)== 0){ ?>
                 <div class="col-md-6 text-center alert alert-warning">No blog articles found!</div>
-            <?php } else { ?>  
+            <?php } else { ?>
             <?php while($row = mysqli_fetch_array($result_blog)) { ?>
               <div class="col-md-4 col-sm-12 col-xs-12 index-news" >
                 <div class="index-news-inner">
@@ -663,14 +667,15 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
           <div class="row justify-content-center">
             <?php if(mysqli_num_rows($result_careers)== 0){ ?>
                 <div class="col-md-6 text-center alert alert-warning">No news found!</div>
-            <?php } else { ?>  
+            <?php } else { ?>
             <?php while($row = mysqli_fetch_array($result_careers)) { ?>
               <div class="col-md-4 col-sm-12 col-xs-12 index-news" >
                 <div class="index-news-inner index-news-inner-career">
                   <div>
                     <h3 class="title-index-news"><?php echo $row['title']; ?></h3>
-                    <span class="date-index-news d-block">Posted on: <?php echo $row['date']; ?></span>
-                    <span class="date-index-news d-block">Last date: <?php echo $row['last_date']; ?></span>
+                    <span class="date-index-news d-block"><strong>Posted on:</strong> <?php echo $row['date']; ?></span>
+                    <span class="date-index-news d-block"><strong>Last date:</strong> <?php echo $row['last_date']; ?></span>
+                    <span class="date-index-news d-block"><strong>Status:</strong> <?php echo $row['status']; ?></span>
                     <div><a class="btn-login btn-download-career" style="text-decoration: none;" href="images/career-images/<?php echo $row['filename']; ?>" class="img-index-news" download><span>Download Details</span></a></div>
                   </div>
                 </div>
