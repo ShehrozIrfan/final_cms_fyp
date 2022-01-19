@@ -28,6 +28,15 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     }
 ?>
 <?php
+    //Getting top 3 notices
+    $query_notices = "SELECT * FROM notices ORDER BY id DESC LIMIT 3";
+    $result_notices = mysqli_query($connection, $query_notices);
+    $result_notices_popup = mysqli_query($connection, $query_notices);
+    if(!$result_notices || !$result_notices_popup) {
+        die("Query Failed .. !" . mysqli_error($connection));
+    }
+?>
+<?php
     //Getting top 3 careers
     $query_careers = "SELECT * FROM careers ORDER BY id DESC LIMIT 3";
     $result_careers = mysqli_query($connection, $query_careers);
@@ -35,6 +44,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         die("Query Failed .. !" . mysqli_error($connection));
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +86,6 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         }
         /* ===================================================== */
         /* ================ INDEX FILE ========================= */
-
         /* Nav-bar */
 
         /* Section Parallax */
@@ -85,9 +94,8 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         .header_parallax {
             background-image: url('./assets/images/bg_parallax.png');
             min-height: 500px;
-            /* display: flex;
-            justify-content: center;
-            align-items: center; */
+            display: flex;
+            align-items: center;
         }
         .header_parallax h2 {
             font-size: 35px;
@@ -382,6 +390,17 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         .index-news-inner-career {
             min-height: 200px;
         }
+        .popup-fixed-notifications {
+            position: fixed;
+            bottom: 0px;
+            z-index: 1;
+        }
+        .popup-fixed-news {
+            position: fixed;
+            bottom: 0px;
+            z-index: 1;
+            right: 0px;
+        }
         /* Media Queries - for mobile responsive */
         @media(max-width: 1200px) {
             .navbar-toggler {
@@ -415,8 +434,11 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             .popup-notifications {
                 margin-top: 50px;
             }
-            .carousel-item {
+            .carousel-item-image {
                 height: auto!important;
+            }
+            .popup-fixed-news {
+                display: none;
             }
         }
 
@@ -475,6 +497,46 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 <body>
     <!-- header -->
     <?php include 'header.php' ?> <!-- header ends -->
+
+    <div class="container popup-fixed-notifications">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="">
+                    <?php if(mysqli_num_rows($result_notices_popup) != 0){ ?>
+                        <?php while($row = mysqli_fetch_array($result_notices_popup)) { ?>
+                            <div class="alert alert-danger alert-dismissible">
+                                <a href="images/notice-images/<?php echo $row['filename']; ?>" style="text-decoration: none; color: black; font-size: 14px;" class="small" download>
+                                    <?php echo $row['title'] ?><span class="pl-2" style="color: red; font-weight: bold;">(Notice)</span>
+                                </a>
+                                <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                                        ×
+                                </button>
+                            </div>
+                        <?php } ?>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12 popup-fixed-news">
+                <?php if(mysqli_num_rows($result_popup) != 0){ ?>
+                    <?php while($row = mysqli_fetch_array($result_popup)) { ?>
+                        <div class="alert alert-warning alert-dismissible">
+                            <a href="news.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: black; font-size: 14px;" class="small" target="_blank">
+                                <?php echo $row['title'] ?><span class="pl-2" style="color: black; font-weight: bold;">(News)</span>
+                            </a>
+                            <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                                    ×
+                            </button>
+                        </div>
+                    <?php } ?>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+
     <!-- Slider section -->
     <section id="index">
         <div id="topSlider" class="carousel slide" data-ride="carousel">
@@ -487,13 +549,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="width:100%; height: 90vh;" src="assets/images/slider-img.jpg">
+                    <img style="width:100%; height: 90vh;" src="assets/images/slider-img.jpg" class="carousel-item-img">
                 </div>
                 <div class="carousel-item">
-                    <img style="width:100%; height: 90vh;" src="assets/images/slider-img-sports.jpeg">
+                    <img style="width:100%; height: 90vh;" src="assets/images/slider-img-sports.jpeg" class="carousel-item-img">
                 </div>
                 <div class="carousel-item">
-                    <img style="width:100%; height: 90vh;" src="assets/images/slider-img-mosque.jpeg">
+                    <img style="width:100%; height: 90vh;" src="assets/images/slider-img-mosque.jpeg" class="carousel-item-img">
                 </div>
             </div>
             <!-- Left and right controls -->
@@ -516,7 +578,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                             <h2 class="">Welcome to GIGCCL</h2>
                             <p>GOVERNMENT ISLAMIA GRADUATE COLLEGE, CIVIL LINES, LAHORE is one of the first ranked institutions of the Punjab.</p>
                             <?php if(!isset($_SESSION['login_user'])): ?>
-                            <a href="about.php" class="cta" style="text-decoration: none;">
+                            <a href="history.php" class="cta" style="text-decoration: none;">
                             <span>Brief History</span>
                             <svg width="15px" height="10px" viewBox="0 0 13 10">
                                 <path d="M1,5 L11,5"></path>
@@ -525,32 +587,6 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                             </a>
                             <?php endif ?>
                         </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12 col-xs-12 popup-notifications">
-                    <?php if(mysqli_num_rows($result_popup) != 0){ ?>
-                        <?php while($row = mysqli_fetch_array($result_popup)) { ?>
-                            <div class="alert alert-warning text-center alert-dismissible">
-                                <a href="news.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: black;" class="small" target="_blank">
-                                    <?php echo $row['title'] ?>
-                                </a>
-                                <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
-                                        ×
-                                </button>
-                            </div>
-                        <?php } ?>
-                    <?php } ?>
-                    <?php if(mysqli_num_rows($result_blog_popup) != 0){ ?>
-                        <?php while($row = mysqli_fetch_array($result_blog_popup)) { ?>
-                            <div class="alert alert-warning text-center alert-dismissible">
-                                <a href="blog_specific.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: black;" class="small" target="_blank">
-                                    <?php echo $row['title'] ?>
-                                </a>
-                                <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
-                                        ×
-                                </button>
-                            </div>
-                        <?php } ?>
-                    <?php } ?>
                   </div>
                 </div>
             </div>
