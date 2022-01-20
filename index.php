@@ -524,10 +524,10 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 <?php if(mysqli_num_rows($result_popup) != 0){ ?>
                     <?php while($row = mysqli_fetch_array($result_popup)) { ?>
                         <div class="alert alert-warning alert-dismissible">
-                            <a href="news.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: black; font-size: 14px;" class="small" target="_blank">
+                            <a href="news.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: black; font-size: 14px; padding-left: 30px;" class="small" target="_blank">
                                 <?php echo $row['title'] ?><span class="pl-2" style="color: black; font-weight: bold;">(News)</span>
                             </a>
-                            <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                            <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true" style="left: 0px;">
                                     ×
                             </button>
                         </div>
