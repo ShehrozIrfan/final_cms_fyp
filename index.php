@@ -60,6 +60,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 
     <link rel="stylesheet" href="./backToTop/backToTop.css">
     <link rel="stylesheet" href="./assets/styles/animations.css">
+    <link rel="stylesheet" href="./assets/styles/counter.css">
     <style>
         /* Global */
         * {
@@ -434,14 +435,18 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             .popup-notifications {
                 margin-top: 50px;
             }
-            .carousel-item-image {
-                height: auto!important;
+            .carousel-item-img {
+                height: 45vh!important;
             }
             .popup-fixed-news {
                 display: none;
             }
         }
-
+        @media(max-width: 600px) {
+            .popup-fixed-notifications {
+                width: 80%;
+            }
+        }
         @media (max-width: 560px) {
             .header_parallax {
                 min-height: 450px;
@@ -497,7 +502,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 <body>
     <!-- header -->
     <?php include 'header.php' ?> <!-- header ends -->
-
+    <!-- notices pop up -->
     <div class="container popup-fixed-notifications">
         <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12">
@@ -517,7 +522,8 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 </div>
             </div>
         </div>
-    </div>
+    </div><!-- notices pop up ends -->
+    <!-- news pop up -->
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-12 col-xs-12 popup-fixed-news">
@@ -535,7 +541,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 <?php } ?>
             </div>
         </div>
-    </div>
+    </div><!-- news pop up ends -->
 
     <!-- Slider section -->
     <section id="index">
@@ -568,6 +574,82 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             </a>
         </div>
     </section><!-- slider-section ends -->
+
+<div class="container" id="counter-why-giccl">
+    <h2 class="text-center font-weight-bold mt-3 mb-5 principal-message-heading">Why GIGCCL</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="counter-box colored">
+                <div>
+                    <img src="assets/images/counter-icon-1.png" alt=""/>
+                </div>
+                <div class="mt-4">
+                    <span class="counter">2147</span>
+                    <p>Students</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="counter-box colored">
+                <div>
+                    <img src="assets/images/counter-icon-2.png" alt=""/>
+                </div>
+                <div class="mt-4">
+                    <span class="counter">3275</span>
+                    <p>Faculity Members</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="counter-box colored">
+                <div>
+                    <img src="assets/images/counter-icon-3.png" alt=""/>
+                </div>
+                <div class="mt-4">
+                    <span class="counter">289</span>
+                    <p>Alumni</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" col-md-4">
+            <div class="counter-box colored">
+                <div>
+                    <img src="assets/images/counter-icon-4.png" alt="" class="str-image" />
+                </div>
+                <div class="mt-3">
+                    <span class="counter counter-student-teacher-ratio">241</span><span class="counter-colon-str">:</span><span class="counter counter-student-teacher-ratio">1</span>
+                    <p class="str-text">Student-Teacher Ratio</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="counter-box colored">
+                <div>
+                    <img src="assets/images/counter-icon-5.png" alt=""/>
+                    </div>
+                <div class="mt-4">
+                    <span class="counter">3275</span>
+                    <p>Societies</p>
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <div class="counter-box colored">
+                <div>
+                    <img src="assets/images/counter-icon-6.png" alt=""/>
+                </div>
+                <div class="mt-4">
+                    <span class="counter">289</span>
+                    <p>Library Resources</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- section parallax -->
     <section>
         <div class="header_parallax parallax pd_top ">
@@ -619,7 +701,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         </div>
     </section><!-- section principal message ends -->
         <!-- section news-->
-        <section id="s_news">
+    <section id="s_news">
       <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">News &amp; Updates</h3>
       <div class="container">
           <div class="row justify-content-center">
@@ -697,7 +779,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
       </div>
     </section><!-- section blog articles ends -->
         <!-- section careers-->
-        <section id="s_news">
+    <section id="s_news">
       <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">Careers</h3>
       <div class="container">
           <div class="row justify-content-center">
@@ -740,5 +822,6 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <?php include 'footer.php' ?><!-- footer ends -->
 
     <script src="./backToTop/backToTop.js"></script>
+    <script src="./assets/js/counter.js"></script>
 </body>
 </html>

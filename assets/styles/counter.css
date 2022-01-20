@@ -1,0 +1,55 @@
+.counter-box {
+    display: block;
+    background: #f6f6f6;
+    padding: 40px 20px 37px;
+    text-align: center;
+    margin-top: 25px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
+    color: #909090;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: #d2d2d2
+}
+
+.counter {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #666;
+    margin-top: 10px;
+    line-height: 28px
+}
+
+.counter-box.colored {
+    background: #00FA9A;
+}
+
+.counter-box.colored p,
+.counter-box.colored i,
+.counter-box.colored .counter {
+    color: #fff
+}
+
+.counter-student-teacher-ratio {
+   display: inline;
+}
+
+.counter-colon-str {
+   font-size: 32px;
+   color: white;
+}
+
+.str-text {
+   margin-top: -5px!important;
+}
