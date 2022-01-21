@@ -113,6 +113,11 @@
             margin-left: 10px;
         }
         /* Media Queries */
+        @media(max-width: 1200px) {
+            .nav-link-research {
+                padding-left: 0px!important;
+            }
+        }
         @media (min-width:992px) {
             .vertical-nav {
                 position: fixed;
@@ -311,7 +316,7 @@
                     <a class="dropdown-item" href="#">Hostel Management</a>
                     </div>
                 </li><!-- Dropdown ends -->
-                <li class="nav-item pl-3">
+                <li class="nav-item nav-link-research pl-3">
                     <a class="nav-link" href="research.php">RESEARCH</a>
                 </li>
                 <!-- Dropdown -->
