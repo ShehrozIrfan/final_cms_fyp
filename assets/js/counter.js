@@ -1,15 +1,19 @@
 $(document).ready(function() {
-   setTimeout(hide_popup, 60000);
+   setTimeout(hide_popup_notice, 60000);
+   setTimeout(hide_popup_news, 45000);
 })
 
-function hide_popup() {
+function hide_popup_notice() {
    $('.popup-fixed-notifications').fadeOut(1000);
+}
+
+function hide_popup_news() {
    $('.popup-fixed-news').fadeOut(1000);
 }
 
 //top offset of the element
 var topCoord = $("#counter-why-giccl").offset().top
-topCoord = Math.floor(topCoord / 2);
+topCoord = Math.floor(topCoord / 2.5);
 var runCount = true;
 $(window).scroll(function (event) {
    var scroll = $(window).scrollTop();
