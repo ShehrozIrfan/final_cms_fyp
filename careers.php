@@ -92,6 +92,9 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
       .table-responsive {
           border: none;
       }
+      #apply-online-error {
+          display: none;
+      }
         @media(max-width: 767px) {
             .img-gallery {
                 margin-bottom: 30px;
@@ -163,7 +166,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                 <td><?php echo $row['last_date']; ?>
                                 <td><?php echo $row['status']; ?></td>
                                 <td><a href="images/career-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn btn-sm btn-dark"><span>Download</span></a></td>
-                                <td><button href="#" class="btn btn-primary btn-sm" career-id="<?php echo $row['id']; ?>">Apply Online</button></td>
+                                <td><button class="btn btn-primary btn-sm apply-online-btn" career-id="<?php echo $row['id']; ?>" >Apply Online</button></td>
                             </tr>
                             <?php $countNo = $countNo + 1; ?>
                         <?php } ?>
@@ -179,47 +182,126 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 
     <?php include 'footer.php'; ?>
     <script src="./backToTop/backToTop.js"></script>
-    <script src="./assets/js/img_gallery_show.js"></script>
+    <script>
+        $(document).on('click', '.apply-online-btn', function(e) {
+            $('#applyOnlineModal').modal('show');
+            $('#apply-online-first-name').val('');
+            $('#apply-online-last-name').val('');
+            $('#apply-online-email').val('');
+            $('#apply-online-contact').val('');
+            $('#apply-online-cnic').val('');
+            $('#apply-online-resume').val('');
+            $('#apply-online-error').css('display', 'none');
+
+            var elm = $(e.target)
+            var career_id = elm.attr('career-id')
+            $('#modal-career-id').val(career_id)
+        })
+
+        $(document).on('click', '#apply-online-apply-btn', function(e) {
+            var first_name = $('#apply-online-first-name').val()
+            var last_name = $('#apply-online-last-name').val()
+            var email = $('#apply-online-email').val()
+            var contact = $('#apply-online-contact').val()
+            var cnic = $('#apply-online-cnic').val()
+            var resume = $('#apply-online-resume').val()
+            var error_msg = $('#apply-online-error')
+            var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            var number_regex = /^[0-9]+$/
+
+            var submitForm = true;
+
+            if(first_name.trim().length == 0) {
+                error_msg.css('display', 'block');
+                error_msg.text("First name can't be blank!");
+                submitForm = false;
+            } else if (first_name.trim().length < 3) {
+                error_msg.css('display', 'block');
+                error_msg.text("First name can't be less than 3 characters!");
+                submitForm = false;
+            } else if(last_name.trim().length == 0) {
+                error_msg.css('display', 'block');
+                error_msg.text("Last name can't be blank!");
+                submitForm = false;
+            } else if (last_name.trim().length < 3) {
+                error_msg.css('display', 'block');
+                error_msg.text("Last name can't be less than 3 characters!");
+                submitForm = false;
+            } else if(!email_regex.test(email)) {
+                error_msg.css('display', 'block');
+                error_msg.text("Please enter a valid email address!");
+                submitForm = false;
+            } else if(cnic.trim().length < 13 || !cnic.match(number_regex)){
+                error_msg.css('display', 'block');
+                error_msg.text("Please enter a valid CNIC number of 13 digits without any '-'");
+                submitForm = false;
+            } else if(contact.trim().length < 11 || !contact.match(number_regex)) {
+                error_msg.css('display', 'block');
+                error_msg.text("Please enter a valid phone number with 11 digits without any '-' and '+' ");
+                submitForm = false;
+            } else if(resume.length == '') {
+                error_msg.css('display', 'block');
+                error_msg.text("Please upload your resume!");
+                submitForm = false;
+            } else if(resume.split('.').pop() != 'pdf') {
+                error_msg.css('display', 'block');
+                error_msg.text("Only pdf files are allowed. Please upload your resume in pdf format!");
+                submitForm = false;
+            } else {
+                submitForm = true;
+            }
+
+            if(submitForm == false) {
+                e.preventDefault();
+            }
+        })
+    </script>
 </body>
 </html>
 
 
 <!-- Modal -->
-<div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModal" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+<div class="modal fade" id="applyOnlineModal" tabindex="-1" aria-labelledby="applyOnlineModal" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Gallery</h5>
+        <h5 class="modal-title">Apply Online</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div id="galleryModalInner" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active" id="carouselSlideOne">
-                </div>
-                <div class="carousel-item" id="carouselSlideTwo">
-                </div>
-                <div class="carousel-item" id="carouselSlideThree">
-                </div>
+        <form action="careers.php" method="post">
+            <div class="alert alert-danger" id="apply-online-error"></div>
+            <input type="hidden" id="modal-career-id" name="career-id">
+            <div class="form-group">
+                <label>First name</label>
+                <input type="text" name="first-name" id="apply-online-first-name" class="form-control" required>
             </div>
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#galleryModalInner" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#galleryModalInner" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-
-        </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="last-name" id="apply-online-last-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" id="apply-online-email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>CNIC</label>
+                <input type="number" name="cnic" id="apply-online-cnic" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Contact</label>
+                <input type="number" name="contact" id="apply-online-contact" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Resume</label>
+                <input type="file" name="resume" id="apply-online-resume" class="form-control" accept="application/pdf" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" name='apply-btn' id="apply-online-apply-btn" class="btn btn-dark btn-block">Apply</button>
+            </div>
+        </form>
       </div>
     </div>
   </div>
