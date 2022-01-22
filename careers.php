@@ -12,6 +12,59 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         die("Query Failed .. !" . mysqli_error($connection));
     }
 ?>
+<?php
+if(isset($_POST['apply-btn'])) {
+    //resume
+    $filename = $_FILES["resume"]["name"];
+
+    //extension main image
+    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+
+    $tempname = $_FILES["resume"]["tmp_name"];
+
+    // $filename = uniqid($filename) . '.' .$ext;
+    $filename = time() . "_" . $filename;
+
+    $folder = "images/career-images/".$filename;
+
+    $career_id = (int)$_POST['career-id'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $cnic = $_POST['cnic'];
+    $contact = $_POST['contact'];
+
+    $date = date('Y-m-d');
+
+    $query = "INSERT INTO applicants (first_name, last_name, email, cnic, contact, resume, date_applied, applied_to_career_id) VALUES('$first_name','$last_name', '$email', '$cnic', '$contact', '$resume', '$date', '$career_id')";
+
+    $result = mysqli_query($connection, $query);
+    if(!$result) {
+        die("Query Failed .. !" . mysqli_error($connection));
+    }
+    else {
+        // Now let's move the uploaded image/file into the folder: career-images
+        if (move_uploaded_file($tempname, $folder))  {
+            $query_find_applicant = "SELECT * from applicants where email = '$email'";
+            echo $email;
+            $result_find_applicant = mysqli_query($connection, $query_find_applicant);
+            if($result_find_applicant) {
+                $applicant_id = $result_find_applicant['id'];
+                echo $applicant_id;
+                $query_career_applicants = "INSERT INTO career_applicants (career_id, applicant_id) VALUES ('$career_id', '$applicant_id')";
+                $result_career_applicants = mysqli_query($connection, $query_career_applicants);
+
+                if(!$result_career_applicants) {
+                    die("Query Failed .. !" . mysqli_error($connection));
+                }
+            } else {
+                die("Query Failed .. !" . mysqli_error($connection));
+            }
+        }
+    }
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,7 +219,11 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                 <td><?php echo $row['last_date']; ?>
                                 <td><?php echo $row['status']; ?></td>
                                 <td><a href="images/career-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn btn-sm btn-dark"><span>Download</span></a></td>
-                                <td><button class="btn btn-primary btn-sm apply-online-btn" career-id="<?php echo $row['id']; ?>" >Apply Online</button></td>
+                                <td>
+                                    <?php if($row['status'] == 'Open'): ?>
+                                    <button class="btn btn-primary btn-sm apply-online-btn" career-id="<?php echo $row['id']; ?>" >Apply Online</button>
+                                    <?php endif ?>
+                                </td>
                             </tr>
                             <?php $countNo = $countNo + 1; ?>
                         <?php } ?>
@@ -253,6 +310,10 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 
             if(submitForm == false) {
                 e.preventDefault();
+            } else {
+                error_msg.removeClass('alert-danger');
+                error_msg.addClass('alert-success');
+                error_msg.text("You've successfully applied to this career/job.");
             }
         })
     </script>
@@ -276,11 +337,11 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             <input type="hidden" id="modal-career-id" name="career-id">
             <div class="form-group">
                 <label>First name</label>
-                <input type="text" name="first-name" id="apply-online-first-name" class="form-control" required>
+                <input type="text" name="first_name" id="apply-online-first-name" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" name="last-name" id="apply-online-last-name" class="form-control" required>
+                <input type="text" name="last_name" id="apply-online-last-name" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Email</label>
