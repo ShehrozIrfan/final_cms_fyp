@@ -6,7 +6,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 }
 ?>
 
-<?php 
+<?php
  $id = $_GET['id'];
  $query = "SELECT * FROM blog_articles WHERE id = '$id'";
  $result = mysqli_query($connection, $query);
@@ -29,7 +29,10 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 
     <style>
         #show_news {
-            margin-top: 20px;
+            margin-top: 110px;
+        }
+        .pd_top {
+            margin-top: 110px;
         }
         .parent-news {
             border-radius: 10px;
@@ -95,7 +98,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                 $row_q = mysqli_fetch_array($result_q);
                         ?>
                         <h5>By: <?php echo $row_q['username']; ?>, <?php echo $row_q['status']; ?> of <?php echo $row_q['department']; ?> department, at GIGCCL. </h5>
-                        <?php } ?>  
+                        <?php } ?>
                         <span class="font-weight-bold">Posted on: </span><span class="small"><?php echo $row['date']; ?></span>
                     </div>
                     <div>

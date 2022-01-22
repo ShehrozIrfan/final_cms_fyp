@@ -15,12 +15,18 @@ function hide_popup_news() {
 var topCoord = $("#counter-why-giccl").offset().top
 topCoord = Math.floor(topCoord / 2.5);
 var runCount = true;
+
+var topCoordNews = $('#s_news').offset().top
+topCoordNews = Math.floor(topCoordNews / 2)
+
 $(window).scroll(function (event) {
    var scroll = $(window).scrollTop();
-   console.log('scroll: ', scroll)
-   console.log('top: ', topCoord)
    if(scroll >= topCoord && runCount) {
       start_counter_why_giccl();
+   }
+   if(scroll >= topCoordNews) {
+      $('.popup-fixed-notifications').fadeOut(1000);
+      $('.popup-fixed-news').fadeOut(1000);
    }
 });
 

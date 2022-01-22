@@ -6,11 +6,11 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 }
 ?>
 <?php
-    //Getting top 3 news
+    //Getting all news
     $msg = '';
     $msgClass = '';
     $row;
-    $query = "SELECT * FROM news ORDER BY id DESC LIMIT 3";
+    $query = "SELECT * FROM news ORDER BY id DESC";
     $result = mysqli_query($connection, $query);
     //storing news for popup notifications
     $result_popup = mysqli_query($connection, $query);
@@ -19,8 +19,8 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     }
 ?>
 <?php
-    //Getting top 3 blog articles
-    $query_blog = "SELECT * FROM blog_articles WHERE status= 'approved' ORDER BY id DESC LIMIT 3";
+    //Getting all blog articles
+    $query_blog = "SELECT * FROM blog_articles WHERE status= 'approved' ORDER BY id DESC";
     $result_blog = mysqli_query($connection, $query_blog);
     $result_blog_popup = mysqli_query($connection, $query_blog);
     if(!$result_blog || !$result_blog_popup) {
@@ -257,7 +257,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         #s_news {
             padding-top: 30px;
             padding-bottom: 30px;
-            background: #F0F9FC;
+            /* background: #F0F9FC; */
             color: black;
         }
         .dummy {
@@ -287,10 +287,11 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             display: block;
         }
         .index-news-inner {
-            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+            /* box-shadow: 0 .5rem 1rem rgba(0,0,0,.15); */
             background: white;
             color: black;
-            min-height: 400px;
+            /* min-height: 400px; */
+            height: 550px;
             padding: 20px;
             border-radius: 10px;
         }
@@ -301,7 +302,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         }
         .img-index-news {
             width: 100%;
-            height: 200px;
+            height: 350px;
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -392,6 +393,11 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         }
         .index-news-inner-career {
             min-height: 200px;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
         }
         .popup-fixed-notifications {
             position: fixed;
@@ -404,7 +410,9 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             z-index: 1;
             right: 0px;
         }
-
+        #news-and-blogs {
+            background: #F0F9FC;
+        }
         /* Media Queries - for mobile responsive */
         @media(max-width: 1200px) {
             .navbar-toggler {
@@ -443,6 +451,10 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             }
             .popup-fixed-news {
                 display: none;
+            }
+            .index-news-inner {
+                min-height: 400px;
+                height: auto;
             }
         }
         @media(max-width: 600px) {
@@ -534,7 +546,9 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         <div class="row">
             <div class="col-md-4 col-sm-12 col-xs-12 popup-fixed-news">
                 <?php if(mysqli_num_rows($result_popup) != 0){ ?>
+                    <?php $popupNewsCount = 0; ?>
                     <?php while($row = mysqli_fetch_array($result_popup)) { ?>
+                        <?php if($popupNewsCount == 3) { break; } ?>
                         <div class="alert alert-warning alert-dismissible">
                             <a href="news.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: black; font-size: 14px; padding-left: 30px;" class="small" target="_blank">
                                 <?php echo $row['title'] ?><span class="pl-2" style="color: black; font-weight: bold;">(News)</span>
@@ -543,6 +557,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                     ×
                             </button>
                         </div>
+                        <?php $popupNewsCount = $popupNewsCount + 1; ?>
                     <?php } ?>
                 <?php } ?>
             </div>
@@ -582,7 +597,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     </section><!-- slider-section ends -->
 
     <!-- section parallax -->
-    <section>
+    <section id="section-welcome-to-giccl">
         <div class="header_parallax parallax">
         <div class="container">
                 <div class="row header_parallax_text">
@@ -636,87 +651,129 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <!-- section why giccl -->
     <?php include 'counter.php'; ?><!-- section why giccl ends -->
 
-    <!-- section news-->
-    <section id="s_news">
-      <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">News &amp; Updates</h3>
-      <div class="container">
-          <div class="row justify-content-center">
-            <?php if(mysqli_num_rows($result)== 0){ ?>
-                <div class="col-md-6 text-center alert alert-warning">No news found!</div>
-            <?php } else { ?>
-            <?php while($row = mysqli_fetch_array($result)) { ?>
-              <div class="col-md-4 col-sm-12 col-xs-12 index-news" >
-                <div class="index-news-inner">
-                  <div>
-                    <div><img  src="images/news-images/<?php echo $row['filename']; ?>" class="img-index-news"></div>
-                    <h3 class="title-index-news"><?php echo $row['title']; ?></h3>
-                    <span class="date-index-news">Posted on <?php echo $row['date']; ?></span>
-                  </div>
-                    <a href="news.php?id=<?php echo $row['id'] ?>" class="btn-login" style="text-decoration: none;">
-                      <span>Read</span>
-                    </a>
+    <!-- section news and blogs -->
+    <section id="news-and-blogs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- section news-->
+                    <section id="s_news">
+                        <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">News &amp; Updates</h3>
+                        <div class="container">
+                            <?php if(mysqli_num_rows($result)== 0){ ?>
+                                <div class="col-md-12 text-center alert alert-warning">No news found!</div>
+                            <?php } else { ?>
+                            <div id="newsSlider" class="carousel slide mt-4 mb-2" data-ride="carousel">
+                                <?php $countNews = 0; ?>
+                                <div class="carousel-inner">
+                                    <?php while($row = mysqli_fetch_array($result)) { ?>
+                                            <?php $countNews = $countNews + 1 ?>
+                                            <div class="carousel-item<?php if($countNews == 1){ ?> active <?php } ?>">
+                                                <div class="row d-flex justify-content-center">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="index-news-inner">
+                                                        <div>
+                                                            <div><img  src="images/news-images/<?php echo $row['filename']; ?>" class="img-index-news"></div>
+                                                            <h3 class="title-index-news"><?php echo $row['title']; ?></h3>
+                                                            <span class="date-index-news"><strong>Posted on:</strong> <?php echo $row['date']; ?></span>
+                                                        </div>
+                                                            <a href="news.php?id=<?php echo $row['id'] ?>" class="btn-login" style="text-decoration: none;">
+                                                            <span>Read</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3 mb-3">
+                                <a class="" href="#newsSlider" role="button" data-slide="prev">
+                                    <img src='assets/images/slider-prev-icon.png' >
+                                </a>
+                                <a class="" href="#newsSlider" role="button" data-slide="next">
+                                    <img src='assets/images/slider-next-icon.png' >
+                                </a>
+                            </div>
+                            <?php } ?>
+                            <div class="row justify-content-center mt-5">
+                            <div class="col-md-12">
+                                <div class="text-center mt-3 mb-3">
+                                    <a href="show_all_news.php" class="cta" style="text-decoration: none;">
+                                        <span>Click Here To View All</span>
+                                        <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </section><!-- section news ends -->
                 </div>
-              </div>
-            <?php } ?>
-            <?php } ?>
-          </div>
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-6">
-            <div class="text-center mt-3 mb-3">
-                <a href="show_all_news.php" class="cta" style="text-decoration: none;">
-                    <span>Click Here To View All</span>
-                    <svg width="15px" height="10px" viewBox="0 0 13 10">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                    </svg>
-                </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- section news ends -->
-
-    <!-- section blog articles -->
-    <section class="mt-5 mb-5">
-        <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">Blog Articles</h3>
-      <div class="container">
-          <div class="row justify-content-center">
-            <?php if(mysqli_num_rows($result_blog)== 0){ ?>
-                <div class="col-md-6 text-center alert alert-warning">No blog articles found!</div>
-            <?php } else { ?>
-            <?php while($row = mysqli_fetch_array($result_blog)) { ?>
-              <div class="col-md-4 col-sm-12 col-xs-12 index-news" >
-                <div class="index-news-inner">
-                  <div>
-                    <div><img  src="images/article-images/<?php echo $row['filename']; ?>" class="img-index-news"></div>
-                    <h3 class="title-index-news"><?php echo $row['title']; ?></h3>
-                    <span class="date-index-news">Posted on <?php echo $row['date']; ?></span>
-                  </div>
-                    <a href="blog_specific.php?id=<?php echo $row['id'] ?>" class="btn-login" style="text-decoration: none;">
-                      <span>Read</span>
-                    </a>
+                <div class="col-md-6">
+                    <!-- section news-->
+                    <section id="s_news">
+                        <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">Blog Articles</h3>
+                        <div class="container">
+                            <?php if(mysqli_num_rows($result_blog)== 0){ ?>
+                                <div class="col-md-12 text-center alert alert-warning">No blog articles found!</div>
+                            <?php } else { ?>
+                            <div id="blogSlider" class="carousel slide mt-4 mb-2" data-ride="carousel">
+                                <?php $countBlog = 0; ?>
+                                <div class="carousel-inner">
+                                    <?php while($row = mysqli_fetch_array($result_blog)) { ?>
+                                            <?php $countBlog = $countBlog + 1 ?>
+                                            <div class="carousel-item<?php if($countBlog == 1){ ?> active <?php } ?>">
+                                                <div class="row d-flex justify-content-center">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="index-news-inner">
+                                                        <div>
+                                                            <div><img  src="images/article-images/<?php echo $row['filename']; ?>" class="img-index-news"></div>
+                                                            <h3 class="title-index-news"><?php echo $row['title']; ?></h3>
+                                                            <span class="date-index-news"><strong>Posted on:</strong> <?php echo $row['date']; ?></span>
+                                                        </div>
+                                                            <a href="blog_specific.php?id=<?php echo $row['id'] ?>" class="btn-login" style="text-decoration: none;">
+                                                                <span>Read</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3 mb-3">
+                                <a class="" href="#blogSlider" role="button" data-slide="prev">
+                                    <img src='assets/images/slider-prev-icon.png' >
+                                </a>
+                                <a class="" href="#blogSlider" role="button" data-slide="next">
+                                    <img src='assets/images/slider-next-icon.png' >
+                                </a>
+                            </div>
+                            <?php } ?>
+                            <div class="row justify-content-center mt-5">
+                            <div class="col-md-12">
+                                <div class="text-center mt-3 mb-3">
+                                    <a href="show_all_news.php" class="cta" style="text-decoration: none;">
+                                        <span>Click Here To Read All</span>
+                                        <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </section><!-- section news ends -->
                 </div>
-              </div>
-            <?php } ?>
-            <?php } ?>
-          </div>
-        <div class="row justify-content-center mt-5">
-          <div class="col-md-6">
-            <div class="text-center mt-3 mb-3">
-                <a href="blog.php" class="cta" style="text-decoration: none;">
-                    <span>Click Here To Read All</span>
-                    <svg width="15px" height="10px" viewBox="0 0 13 10">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                    </svg>
-                </a>
             </div>
-          </div>
         </div>
-      </div>
-    </section><!-- section blog articles ends -->
+    </section><!-- section news and blogs ends -->
 
-        <!-- section careers-->
+    <!-- section careers-->
     <section id="s_news">
       <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">Careers</h3>
       <div class="container">
@@ -726,7 +783,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             <?php } else { ?>
             <?php while($row = mysqli_fetch_array($result_careers)) { ?>
               <div class="col-md-4 col-sm-12 col-xs-12 index-news" >
-                <div class="index-news-inner index-news-inner-career">
+                <div class="index-news-inner-career">
                   <div>
                     <h3 class="title-index-news"><?php echo $row['title']; ?></h3>
                     <span class="date-index-news d-block"><strong>Posted on:</strong> <?php echo $row['date']; ?></span>

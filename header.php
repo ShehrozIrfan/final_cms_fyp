@@ -118,6 +118,14 @@
                 padding-left: 0px!important;
             }
         }
+        @media(max-width: 1200px) {
+            .notices {
+                margin-left: 0px;
+            }
+            .fa-caret-down {
+                padding-left: 12px;
+            }
+        }
         @media (min-width:992px) {
             .vertical-nav {
                 position: fixed;

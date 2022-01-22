@@ -75,7 +75,7 @@
    }
 </style>
 <div class="container" id="counter-why-giccl">
-    <h2 class="text-center font-weight-bold mb-3 principal-message-heading why-giccl-heading">Why GIGCCL</h2>
+    <h2 class="text-center font-weight-bold mb-3 principal-message-heading why-giccl-heading">About GIGCCL</h2>
     <div class="row">
         <div class="col-md-4">
             <div class="counter-box colored">
