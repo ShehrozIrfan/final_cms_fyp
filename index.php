@@ -520,6 +520,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 <body>
     <!-- header -->
     <?php include 'header.php' ?> <!-- header ends -->
+
     <!-- notices pop up -->
     <div class="container popup-fixed-notifications">
         <div class="row">

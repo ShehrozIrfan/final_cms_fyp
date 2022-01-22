@@ -163,7 +163,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                 <td><?php echo $row['last_date']; ?>
                                 <td><?php echo $row['status']; ?></td>
                                 <td><a href="images/career-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn btn-sm btn-dark"><span>Download</span></a></td>
-                                <td><a href="#" class="btn btn-primary btn-sm">Apply Online</a></td>
+                                <td><button href="#" class="btn btn-primary btn-sm" career-id="<?php echo $row['id']; ?>">Apply Online</button></td>
                             </tr>
                             <?php $countNo = $countNo + 1; ?>
                         <?php } ?>
