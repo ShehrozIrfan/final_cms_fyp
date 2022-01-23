@@ -25,7 +25,7 @@ if(isset($_POST['apply-btn'])) {
     // $filename = uniqid($filename) . '.' .$ext;
     $filename = time() . "_" . $filename;
 
-    $folder = "images/career-images/".$filename;
+    $folder = "./images/applicant-resumes/".$filename;
 
     $career_id = (int)$_POST['career-id'];
     $first_name = $_POST['first_name'];
@@ -36,33 +36,35 @@ if(isset($_POST['apply-btn'])) {
 
     $date = date('Y-m-d');
 
-    $query = "INSERT INTO applicants (first_name, last_name, email, cnic, contact, resume, date_applied, applied_to_career_id) VALUES('$first_name','$last_name', '$email', '$cnic', '$contact', '$resume', '$date', '$career_id')";
+    $query_add_career = "INSERT INTO applicants (first_name, last_name, email, cnic, contact, resume, date_applied, applied_to_career_id) VALUES('$first_name','$last_name', '$email', '$cnic', '$contact', '$filename', '$date', '$career_id')";
 
-    $result = mysqli_query($connection, $query);
-    if(!$result) {
+    $result_add_career = mysqli_query($connection, $query_add_career);
+    if(!$result_add_career) {
         die("Query Failed .. !" . mysqli_error($connection));
     }
     else {
         // Now let's move the uploaded image/file into the folder: career-images
         if (move_uploaded_file($tempname, $folder))  {
             $query_find_applicant = "SELECT * from applicants where email = '$email'";
-            echo $email;
             $result_find_applicant = mysqli_query($connection, $query_find_applicant);
             if($result_find_applicant) {
-                $applicant_id = $result_find_applicant['id'];
-                echo $applicant_id;
+                while($row = mysqli_fetch_array($result_find_applicant)) {
+                    $applicant_id = $row['id'];
+                }
                 $query_career_applicants = "INSERT INTO career_applicants (career_id, applicant_id) VALUES ('$career_id', '$applicant_id')";
                 $result_career_applicants = mysqli_query($connection, $query_career_applicants);
 
                 if(!$result_career_applicants) {
                     die("Query Failed .. !" . mysqli_error($connection));
                 }
+            }
+            $msg = "Successfully applied for the job!";
+            $msgClass = "success";
+            // header("Refresh:2; url=careers.php");
             } else {
                 die("Query Failed .. !" . mysqli_error($connection));
             }
         }
-    }
-
 }
 ?>
 <!DOCTYPE html>
@@ -185,11 +187,24 @@ if(isset($_POST['apply-btn'])) {
                 <?php if(mysqli_num_rows($result) == 0) { ?>
                     <div class="text-center alert alert-warning">There are currently no positions vacant. Please contact Registrar's Office for any information.</div>
                 <?php } else { ?>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <?php if($msg != '') { ?>
+                                <div class="alert alert-<?php echo $msgClass ?> text-center alert-dismissible">
+                                <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                                    ×
+                                </button>
+                                <?php echo $msg ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
                     <table class="table table-bordered table-striped table-responsive">
                         <tr class="thead-dark">
                             <th>No.</th>
                             <th>Job</th>
                             <th>Last date to apply</th>
+                            <th>Posted on</th>
                             <th>Status</th>
                             <th>Download details</th>
                             <th>Apply</th>
@@ -216,9 +231,10 @@ if(isset($_POST['apply-btn'])) {
                             <tr>
                                 <td><?php echo $countNo; ?></td>
                                 <td><?php echo $row['title']; ?></td>
-                                <td><?php echo $row['last_date']; ?>
+                                <td><?php echo $row['last_date']; ?></td>
+                                <td><?php echo $row['date']; ?></td>
                                 <td><?php echo $row['status']; ?></td>
-                                <td><a href="images/career-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn btn-sm btn-dark"><span>Download</span></a></td>
+                                <td class="text-center"><a href="images/career-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn btn-sm btn-dark"><span>Download</span></a></td>
                                 <td>
                                     <?php if($row['status'] == 'Open'): ?>
                                     <button class="btn btn-primary btn-sm apply-online-btn" career-id="<?php echo $row['id']; ?>" >Apply Online</button>
@@ -332,7 +348,7 @@ if(isset($_POST['apply-btn'])) {
         </button>
       </div>
       <div class="modal-body">
-        <form action="careers.php" method="post">
+        <form action="careers.php" method="post" enctype="multipart/form-data">
             <div class="alert alert-danger" id="apply-online-error"></div>
             <input type="hidden" id="modal-career-id" name="career-id">
             <div class="form-group">
