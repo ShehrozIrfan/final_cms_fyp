@@ -38,7 +38,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 ?>
 <?php
     //Getting top 3 careers
-    $query_careers = "SELECT * FROM careers ORDER BY id DESC LIMIT 3";
+    $query_careers = "SELECT * FROM careers WHERE status='Open' ORDER BY id DESC LIMIT 3";
     $result_careers = mysqli_query($connection, $query_careers);
     if(!$result_careers) {
         die("Query Failed .. !" . mysqli_error($connection));

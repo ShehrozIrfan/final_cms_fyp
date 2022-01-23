@@ -6,7 +6,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
 }
 ?>
 <?php
-    $query = "SELECT * FROM careers ORDER BY id DESC";
+    $query = "SELECT * FROM careers WHERE status='Open' ORDER BY id DESC";
     $result = mysqli_query($connection, $query);
     if(!$result) {
         die("Query Failed .. !" . mysqli_error($connection));
