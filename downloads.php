@@ -103,6 +103,82 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                         </table>
                     </div>
                 </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 mt-4 mb-4">
+                    <div>
+                        <table class="table table-bordered">
+                            <tr class="downloads-heading">
+                                <td>Project Guideline</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="to-download" href="assets/downloads-page/dummy-file.pdf" download>Guidelines for Synopsis & Project</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 mt-4 mb-4">
+                    <div>
+                        <table class="table table-bordered">
+                            <tr class="downloads-heading">
+                                <td>Forms for Students</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="to-download" href="assets/downloads-page/dummy-file.pdf" download>Subject Change Form</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="to-download" href="assets/downloads-page/dummy-file.pdf" download>Fee Refund Form</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="to-download" href="assets/downloads-page/dummy-file.pdf" download>Late College Admission Form</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 mt-4 mb-4">
+                    <div>
+                        <table class="table table-bordered">
+                            <tr class="downloads-heading">
+                                <td>Affidavit for Students</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="to-download" href="assets/downloads-page/dummy-file.pdf" download>Affidavit for students regarding Covid-19 SOP's</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 mt-4 mb-4">
+                    <div>
+                        <table class="table table-bordered">
+                            <tr class="downloads-heading">
+                                <td>Forms for Non-Teaching Positions</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="to-download" href="assets/downloads-page/dummy-file.pdf" download>Job Form for Non-Teaching Staff</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="to-download" href="assets/downloads-page/dummy-file.pdf" download>Challan Form for Non-Teaching Posts</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="to-download" href="assets/downloads-page/dummy-file.pdf" download>Application Form for Job</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
