@@ -206,7 +206,7 @@ if(isset($_POST['apply-btn'])) {
                             <th>Last date to apply</th>
                             <th>Posted on</th>
                             <th>Status</th>
-                            <th>Download details</th>
+                            <th>Details</th>
                             <th>Apply</th>
                         </tr>
                         <?php $countNo = 1; ?>

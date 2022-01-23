@@ -146,7 +146,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                     <tr>
                                         <td>1.</td>
                                         <td>Hafiz Muhammad Saleem, M.Phil</td>
-                                        <td>Assitant Prof.</td>
+                                        <td>Assistant Prof.</td>
                                     </tr>
                                     <tr>
                                         <td>2.</td>
