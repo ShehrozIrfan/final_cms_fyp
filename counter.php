@@ -76,7 +76,7 @@
 </style>
 <div class="container" id="counter-why-giccl">
     <h2 class="text-center font-weight-bold mb-3 principal-message-heading why-giccl-heading">About GIGCCL</h2>
-    <div class="row">
+    <div class="row" data-aos="flip-up" data-aos-delay="500">
         <div class="col-md-4">
             <div class="counter-box colored">
                 <div>
@@ -111,8 +111,7 @@
             </div>
         </div>
     </div>
-
-    <div class="row">
+    <div class="row" data-aos="flip-down" data-aos-delay="500">
         <div class=" col-md-4">
             <div class="counter-box colored">
                 <div>

@@ -52,6 +52,8 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | GIGCCL</title>
+    <!-- animate on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -600,7 +602,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <!-- section parallax -->
     <section id="section-welcome-to-giccl">
         <div class="header_parallax parallax">
-        <div class="container">
+        <div class="container" data-aos="fade-right">
                 <div class="row header_parallax_text">
                   <div class="col-md-6 col-sm-12 col-xs-12 parent-welcome-text">
                         <div>
@@ -628,10 +630,10 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             <div class="principal-message">
                 <h2 class="text-center font-weight-bold mb-5 principal-message-heading">Message of The Principal</h2>
                 <div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-md-4 col-sm-12 col-xs-12" data-aos="fade-right">
                         <img class="principal-img" src="assets/images/principal.jpeg">
                     </div>
-                    <div class="col-md-7 col-sm-12 col-xs-12">
+                    <div class="col-md-7 col-sm-12 col-xs-12" data-aos="fade-left" data-aos-delay="500">
                         <div class="principal-message-text">
                             <div>
                                 <p>Dear Students,</p>
@@ -659,56 +661,58 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 <div class="col-md-6">
                     <!-- section news-->
                     <section id="s_news">
-                        <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">News &amp; Updates</h3>
-                        <div class="container">
-                            <?php if(mysqli_num_rows($result)== 0){ ?>
-                                <div class="col-md-12 text-center alert alert-warning">No news found!</div>
-                            <?php } else { ?>
-                            <div id="newsSlider" class="carousel slide mt-4 mb-2" data-ride="carousel">
-                                <?php $countNews = 0; ?>
-                                <div class="carousel-inner">
-                                    <?php while($row = mysqli_fetch_array($result)) { ?>
-                                            <?php $countNews = $countNews + 1 ?>
-                                            <div class="carousel-item<?php if($countNews == 1){ ?> active <?php } ?>">
-                                                <div class="row d-flex justify-content-center">
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <div class="index-news-inner">
-                                                        <div>
-                                                            <div><img  src="images/news-images/<?php echo $row['filename']; ?>" class="img-index-news"></div>
-                                                            <h3 class="title-index-news"><?php echo $row['title']; ?></h3>
-                                                            <span class="date-index-news"><strong>Posted on:</strong> <?php echo $row['date']; ?></span>
-                                                        </div>
-                                                            <a href="news.php?id=<?php echo $row['id'] ?>" class="btn-login" style="text-decoration: none;">
-                                                            <span>Read</span>
-                                                            </a>
+                        <div data-aos="fade-right">
+                            <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">News &amp; Updates</h3>
+                            <div class="container">
+                                <?php if(mysqli_num_rows($result)== 0){ ?>
+                                    <div class="col-md-12 text-center alert alert-warning">No news found!</div>
+                                <?php } else { ?>
+                                <div id="newsSlider" class="carousel slide mt-4 mb-2" data-ride="carousel">
+                                    <?php $countNews = 0; ?>
+                                    <div class="carousel-inner">
+                                        <?php while($row = mysqli_fetch_array($result)) { ?>
+                                                <?php $countNews = $countNews + 1 ?>
+                                                <div class="carousel-item<?php if($countNews == 1){ ?> active <?php } ?>">
+                                                    <div class="row d-flex justify-content-center">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="index-news-inner">
+                                                            <div>
+                                                                <div><img  src="images/news-images/<?php echo $row['filename']; ?>" class="img-index-news"></div>
+                                                                <h3 class="title-index-news"><?php echo $row['title']; ?></h3>
+                                                                <span class="date-index-news"><strong>Posted on:</strong> <?php echo $row['date']; ?></span>
+                                                            </div>
+                                                                <a href="news.php?id=<?php echo $row['id'] ?>" class="btn-login" style="text-decoration: none;">
+                                                                <span>Read</span>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                    <?php } ?>
+                                        <?php } ?>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text-center mt-3 mb-3">
-                                <a class="" href="#newsSlider" role="button" data-slide="prev">
-                                    <img src='assets/images/slider-prev-icon.png' >
-                                </a>
-                                <a class="" href="#newsSlider" role="button" data-slide="next">
-                                    <img src='assets/images/slider-next-icon.png' >
-                                </a>
-                            </div>
-                            <?php } ?>
-                            <div class="row justify-content-center mt-5">
-                            <div class="col-md-12">
                                 <div class="text-center mt-3 mb-3">
-                                    <a href="show_all_news.php" class="cta" style="text-decoration: none;">
-                                        <span>Click Here To View All</span>
-                                        <svg width="15px" height="10px" viewBox="0 0 13 10">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                        </svg>
+                                    <a class="" href="#newsSlider" role="button" data-slide="prev">
+                                        <img src='assets/images/slider-prev-icon.png' >
+                                    </a>
+                                    <a class="" href="#newsSlider" role="button" data-slide="next">
+                                        <img src='assets/images/slider-next-icon.png' >
                                     </a>
                                 </div>
-                            </div>
+                                <?php } ?>
+                                <div class="row justify-content-center mt-5">
+                                <div class="col-md-12">
+                                    <div class="text-center mt-3 mb-3">
+                                        <a href="show_all_news.php" class="cta" style="text-decoration: none;">
+                                            <span>Click Here To View All</span>
+                                            <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                            <path d="M1,5 L11,5"></path>
+                                            <polyline points="8 1 12 5 8 9"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </section><!-- section news ends -->
@@ -716,56 +720,58 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 <div class="col-md-6">
                     <!-- section news-->
                     <section id="s_news">
-                        <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">Blog Articles</h3>
-                        <div class="container">
-                            <?php if(mysqli_num_rows($result_blog)== 0){ ?>
-                                <div class="col-md-12 text-center alert alert-warning">No blog articles found!</div>
-                            <?php } else { ?>
-                            <div id="blogSlider" class="carousel slide mt-4 mb-2" data-ride="carousel">
-                                <?php $countBlog = 0; ?>
-                                <div class="carousel-inner">
-                                    <?php while($row = mysqli_fetch_array($result_blog)) { ?>
-                                            <?php $countBlog = $countBlog + 1 ?>
-                                            <div class="carousel-item<?php if($countBlog == 1){ ?> active <?php } ?>">
-                                                <div class="row d-flex justify-content-center">
-                                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <div class="index-news-inner">
-                                                        <div>
-                                                            <div><img  src="images/article-images/<?php echo $row['filename']; ?>" class="img-index-news"></div>
-                                                            <h3 class="title-index-news"><?php echo $row['title']; ?></h3>
-                                                            <span class="date-index-news"><strong>Posted on:</strong> <?php echo $row['date']; ?></span>
-                                                        </div>
-                                                            <a href="blog_specific.php?id=<?php echo $row['id'] ?>" class="btn-login" style="text-decoration: none;">
-                                                                <span>Read</span>
-                                                            </a>
+                        <div data-aos="fade-left">
+                            <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">Blog Articles</h3>
+                            <div class="container" data-aos="fade-left">
+                                <?php if(mysqli_num_rows($result_blog)== 0){ ?>
+                                    <div class="col-md-12 text-center alert alert-warning">No blog articles found!</div>
+                                <?php } else { ?>
+                                <div id="blogSlider" class="carousel slide mt-4 mb-2" data-ride="carousel">
+                                    <?php $countBlog = 0; ?>
+                                    <div class="carousel-inner">
+                                        <?php while($row = mysqli_fetch_array($result_blog)) { ?>
+                                                <?php $countBlog = $countBlog + 1 ?>
+                                                <div class="carousel-item<?php if($countBlog == 1){ ?> active <?php } ?>">
+                                                    <div class="row d-flex justify-content-center">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="index-news-inner">
+                                                            <div>
+                                                                <div><img  src="images/article-images/<?php echo $row['filename']; ?>" class="img-index-news"></div>
+                                                                <h3 class="title-index-news"><?php echo $row['title']; ?></h3>
+                                                                <span class="date-index-news"><strong>Posted on:</strong> <?php echo $row['date']; ?></span>
+                                                            </div>
+                                                                <a href="blog_specific.php?id=<?php echo $row['id'] ?>" class="btn-login" style="text-decoration: none;">
+                                                                    <span>Read</span>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                    <?php } ?>
+                                        <?php } ?>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text-center mt-3 mb-3">
-                                <a class="" href="#blogSlider" role="button" data-slide="prev">
-                                    <img src='assets/images/slider-prev-icon.png' >
-                                </a>
-                                <a class="" href="#blogSlider" role="button" data-slide="next">
-                                    <img src='assets/images/slider-next-icon.png' >
-                                </a>
-                            </div>
-                            <?php } ?>
-                            <div class="row justify-content-center mt-5">
-                            <div class="col-md-12">
                                 <div class="text-center mt-3 mb-3">
-                                    <a href="show_all_news.php" class="cta" style="text-decoration: none;">
-                                        <span>Click Here To Read All</span>
-                                        <svg width="15px" height="10px" viewBox="0 0 13 10">
-                                        <path d="M1,5 L11,5"></path>
-                                        <polyline points="8 1 12 5 8 9"></polyline>
-                                        </svg>
+                                    <a class="" href="#blogSlider" role="button" data-slide="prev">
+                                        <img src='assets/images/slider-prev-icon.png' >
+                                    </a>
+                                    <a class="" href="#blogSlider" role="button" data-slide="next">
+                                        <img src='assets/images/slider-next-icon.png' >
                                     </a>
                                 </div>
-                            </div>
+                                <?php } ?>
+                                <div class="row justify-content-center mt-5">
+                                <div class="col-md-12">
+                                    <div class="text-center mt-3 mb-3">
+                                        <a href="show_all_news.php" class="cta" style="text-decoration: none;">
+                                            <span>Click Here To Read All</span>
+                                            <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                            <path d="M1,5 L11,5"></path>
+                                            <polyline points="8 1 12 5 8 9"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </section><!-- section news ends -->
@@ -777,7 +783,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <!-- section careers-->
     <section id="s_news">
       <h3 class="text-center font-weight-bold mt-3 mb-5 heading-news-and-updates">Careers</h3>
-      <div class="container">
+      <div class="container" data-aos="fade-left">
           <div class="row justify-content-center">
             <?php if(mysqli_num_rows($result_careers)== 0){ ?>
                 <div class="col-md-6 text-center alert alert-warning">No news found!</div>
@@ -817,6 +823,10 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <a id="back2Top" title="Back to top" href="#"><i class="fa fa-chevron-circle-up"></i></a>
     <!-- footer -->
     <?php include 'footer.php' ?><!-- footer ends -->
+
+    <!-- animate on scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
 
     <script src="./backToTop/backToTop.js"></script>
     <script src="./assets/js/counter.js"></script>
