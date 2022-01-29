@@ -523,6 +523,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <!-- header -->
     <?php include 'header.php' ?> <!-- header ends -->
 
+    <div style="overflow-x:hidden;">
     <!-- notices pop up -->
     <div class="container popup-fixed-notifications">
         <div class="row">
@@ -819,6 +820,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
       </div>
     </section><!-- section careers ends -->
 
+    </div>
     <!-- back to top -->
     <a id="back2Top" title="Back to top" href="#"><i class="fa fa-chevron-circle-up"></i></a>
     <!-- footer -->
