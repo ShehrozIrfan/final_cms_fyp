@@ -64,6 +64,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
           text-align: justify;
           padding-top: 5px;
           padding-bottom: 5px;
+          font-size: 20px;
       }
       .every-top-bg {
           background: url('assets/images/every-page-top-bg.jpg');

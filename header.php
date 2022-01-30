@@ -13,7 +13,7 @@
         /* ================ Header FILE ========================= */
         .custom-navbar {
             background: white;
-            border-bottom: 1px solid grey;
+            /* border-bottom: 1px solid grey; */
             /* box-shadow: 2px 2px 2px grey; */
         }
         .nav-link {

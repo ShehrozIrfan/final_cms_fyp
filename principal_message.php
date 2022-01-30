@@ -43,6 +43,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
       }
       .full-principal-text {
           text-align: justify;
+          font-size: 20px;
       }
       .heading-message {
           text-decoration: underline;
