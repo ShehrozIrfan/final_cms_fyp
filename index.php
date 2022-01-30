@@ -415,6 +415,10 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         #news-and-blogs {
             background: #F0F9FC;
         }
+        .giccl-video {
+            max-width: 100%;
+            height: 300px;
+        }
         /* Media Queries - for mobile responsive */
         @media(max-width: 1200px) {
             .navbar-toggler {
@@ -652,7 +656,24 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         </div>
     </section><!-- section principal message ends -->
 
-    <!-- section why giccl -->
+    <!-- section why gigccl -->
+    <section class="section-principal-message">
+        <div class="container">
+            <div class="principal-message">
+                <h2 class="text-center font-weight-bold mb-5 principal-message-heading">Why GIGCCL</h2>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12" data-aos="fade-right">
+                        <video src='' controls class="giccl-video">
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12" data-aos="fade-left">
+                        <video src='' controls class="giccl-video">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- section principal message ends -->
+
+    <!-- section about giccl -->
     <?php include 'counter.php'; ?><!-- section why giccl ends -->
 
     <!-- section news and blogs -->
