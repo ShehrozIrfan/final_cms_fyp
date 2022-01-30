@@ -12,16 +12,17 @@
         /* ===================================================== */
         /* ================ Header FILE ========================= */
         .custom-navbar {
-            background: black;
-            /* border: 1px solid grey;
-            box-shadow: 2px 2px 2px grey; */
+            background: white;
+            border-bottom: 1px solid grey;
+            /* box-shadow: 2px 2px 2px grey; */
         }
         .nav-link {
-            color: white;
+            color: black;
             font-size: 18px;
         }
         .nav-link:hover {
-            color: white;
+            color: black;
+            /* border-bottom: 3px solid #2AACFE; */
         }
         .nav-link-login {
             color: #ff9000;
@@ -41,8 +42,12 @@
         .nav-link-signup:hover {
             color: white;
         }
+        .navbar-toggler {
+            border: 1px solid black;
+            outline: none!important;
+        }
         .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 
         }
         /* Logos */
@@ -273,8 +278,8 @@
                 <!-- Dropdown -->
                 <li class="nav-item dropdown center-nav-item">
                     <a class="nav-link">
-                        <a href="index.php" class="text-white nav-link">MAIN PAGE</a>
-                        <span class="fa fa-caret-down text-white"></span>
+                        <a href="index.php" class=" nav-link">MAIN PAGE</a>
+                        <span class="fa fa-caret-down "></span>
                     </a>
                     <div class="dropdown-menu">
                     <a class="dropdown-item" href="principal_message.php">Principal Message</a>
@@ -285,8 +290,8 @@
                 <!-- Dropdown -->
                 <li class="nav-item center-nav-item dropdown">
                     <a class="nav-link">
-                        <a href="#" class="text-white nav-link">ACADEMICS</a>
-                        <span class="fa fa-caret-down text-white"></span>
+                        <a href="#" class=" nav-link">ACADEMICS</a>
+                        <span class="fa fa-caret-down "></span>
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="faculty.php">Faculty</a>
@@ -313,8 +318,8 @@
                 <!-- Dropdown -->
                 <li class="nav-item dropdown center-nav-item">
                     <a class="nav-link">
-                        <a href="#" class="text-white nav-link">MANAGEMENT</a>
-                        <span class="fa fa-caret-down text-white"></span>
+                        <a href="#" class=" nav-link">MANAGEMENT</a>
+                        <span class="fa fa-caret-down "></span>
                     </a>
                     <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Accounts Management</a>
@@ -330,8 +335,8 @@
                 <!-- Dropdown -->
                 <li class="nav-item center-nav-item dropdown">
                     <a class="nav-link">
-                        <a href="blog.php" class="text-white nav-link">BLOG</a>
-                        <span class="fa fa-caret-down text-white"></span>
+                        <a href="blog.php" class=" nav-link">BLOG</a>
+                        <span class="fa fa-caret-down "></span>
                     </a>
                     <div class="dropdown-menu">
                     <a class="dropdown-item" href="login_blog.php">Login</a>
