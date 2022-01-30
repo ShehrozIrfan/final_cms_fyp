@@ -6,7 +6,6 @@ if(!isset($_SESSION['login_user']))
 }
 ?>
 <?php
-    //Showing all news
     $msg = '';
     $msgClass = '';
     if($_SESSION['is_super_admin'] == 'true') {
@@ -19,12 +18,9 @@ if(!isset($_SESSION['login_user']))
     $result = mysqli_query($connection, $query);
     if(!$result) {
         die("Query Failed .. !" . mysqli_error($connection));
-    }//else {
-    //     echo "News captured successfully!";
-    // }
+    }
 ?>
 <?php
-//Delete news
 if(isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $query_d = "DELETE FROM careers WHERE id = $id";
@@ -45,6 +41,8 @@ if(isset($_GET['edit'])) {
     $updated = true;
     $id = $_GET['edit'];
 }
+?>
+<?php
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,6 +147,9 @@ if(isset($_GET['edit'])) {
                     </tr>
                     <tr>
                         <th><span class="font-weight-bold">Status: </span><span class="small last_date"><?php echo $row['status']; ?></span></th>
+                    </tr>
+                    <tr>
+                        <td><a href="applicants.php?career_id=<?php echo $row['id'] ?>" class="btn btn-sm btn-primary">Show Applicants</a></td>
                     </tr>
                     <?php if(isset($_SESSION['login_user'])): ?>
                         <tr>

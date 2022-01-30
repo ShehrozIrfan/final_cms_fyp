@@ -187,8 +187,8 @@ if(isset($_POST['apply-btn'])) {
                 <?php if(mysqli_num_rows($result) == 0) { ?>
                     <div class="text-center alert alert-warning">There are currently no positions vacant. Please contact Registrar's Office for any information.</div>
                 <?php } else { ?>
-                    <div class="row">
-                        <div class="col-md-12">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
                             <?php if($msg != '') { ?>
                                 <div class="alert alert-<?php echo $msgClass ?> text-center alert-dismissible">
                                 <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">

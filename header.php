@@ -161,6 +161,9 @@
             .last-item {
                 margin-bottom: 0px;
             }
+            #navbar-all {
+                padding: 0px;
+            }
         }
         @media(max-width: 600px) {
             .top-main-logo {
