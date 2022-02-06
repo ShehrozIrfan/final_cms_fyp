@@ -100,15 +100,14 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             align-items: center;
         }
         .header_parallax h2 {
-            font-size: 35px;
+            font-size: 32px;
             line-height: 1.5em;
             font-weight: bold;
-            color: black;
+            color: #2D2E2E;
         }
-        .header_parallax a {
-            margin-top: 20px;
-            padding: 10px 30px 10px 30px;
-            border-radius: 10px;
+        .giccl-para {
+            color: grey;
+            font-size: 16px;
         }
 
         /* Special button effect */
@@ -298,9 +297,9 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             border-radius: 10px;
         }
         .index-news-inner:hover {
-            background: black;
+            /* background: black;
             color: white;
-            transition: background 2s;
+            transition: background 2s; */
         }
         .img-index-news {
             width: 100%;
@@ -385,6 +384,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             display: flex;
             align-items: center;
             text-align: justify;
+            font-size: 20px;
         }
         .btn-principal-message {
             padding: 10px 30px;
@@ -418,6 +418,30 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         .giccl-video {
             max-width: 100%;
             height: 300px;
+        }
+        .brief-history-btn {
+            border: 2px solid #0E2D61;
+            border-radius: 0px;
+            color: #0E2D61;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px 0px rgb(0, 0, 0, 0.18);
+            padding: 15px 30px;
+        }
+        .brief-history-btn:hover {
+            background: #0E2D61;
+            color: white;
+        }
+        .parent-brief-history-btn {
+            margin-top: 30px;
+        }
+        .read-more-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .text-why-giccl {
+            font-size: 20px;
+            color: grey;
+            padding-bottom: 30px;
         }
         /* Media Queries - for mobile responsive */
         @media(max-width: 1200px) {
@@ -458,9 +482,22 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             .popup-fixed-news {
                 display: none;
             }
+            .popup-fixed-notifications {
+                display: none;
+            }
             .index-news-inner {
                 min-height: 400px;
                 height: auto;
+            }
+            .principal-message-text {
+                font-size: 16px;
+            }
+            .read-more-btn {
+                font-size: 12px;
+            }
+            .text-why-giccl {
+                font-size: 16px;
+                padding-bottom: 0px;
             }
         }
         @media(max-width: 600px) {
@@ -612,15 +649,16 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                   <div class="col-md-6 col-sm-12 col-xs-12 parent-welcome-text">
                         <div>
                             <h2 class="">Welcome to GIGCCL</h2>
-                            <p>GOVERNMENT ISLAMIA GRADUATE COLLEGE, CIVIL LINES, LAHORE is one of the first ranked institutions of the Punjab.</p>
+                            <p class="giccl-para">GOVERNMENT ISLAMIA GRADUATE COLLEGE, CIVIL LINES, LAHORE is one of the first ranked institutions of the Punjab.</p>
                             <?php if(!isset($_SESSION['login_user'])): ?>
-                            <a href="history.php" class="cta" style="text-decoration: none;">
+                            <div class="parent-brief-history-btn"><a href="history.php" class="brief-history-btn" style="text-decoration: none;">
                             <span>Brief History</span>
-                            <svg width="15px" height="10px" viewBox="0 0 13 10">
+                            <i class="fa fa-arrow-right pl-2"></i>
+                            <!-- <svg width="15px" height="10px" viewBox="0 0 13 10">
                                 <path d="M1,5 L11,5"></path>
                                 <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                            </a>
+                            </svg> -->
+                            </a></div>
                             <?php endif ?>
                         </div>
                   </div>
@@ -644,9 +682,10 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                 <p>Dear Students,</p>
                                 <p>Education is an epithet which distinguishes man from the rest of the creatures of Allah. The significance of learning cannot be overlooked as it helps man to explore new vistas and dimensions of life. It enables him to excel over his fellow beings and secure a place of distinction. As the human civilization is making great strides forward, it is offering man a highly competitive environment in which survival and well-being is for those who can move ahead at the required pace.</p>
                                 <p>
-                                    <a href="principal_message.php" class="btn-login mt-3 mb-3 btn-principal-message" style="text-decoration: none;">
+                                    <div class="parent-brief-history-btn"><a href="principal_message.php" class="brief-history-btn read-more-btn" style="text-decoration: none;">
                                         <span>Read More</span>
-                                    </a>
+                                        <i class="fa fa-arrow-right pl-2"></i>
+                                    </a><div>
                                 </p>
                             </div>
                         </div>
@@ -660,13 +699,18 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <section class="section-principal-message">
         <div class="container">
             <div class="principal-message">
-                <h2 class="text-center font-weight-bold mb-5 principal-message-heading">Why GIGCCL</h2>
+                <h2 class="text-center font-weight-bold mb-4 principal-message-heading">Why GIGCCL</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-why-giccl">Government Islamia College, Civil Lines, Lahore is one of the top-ranking institutions of Punjab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quas cupiditate velit nobis quae maxime, exercitationem distinctio quisquam blanditiis nemo.</p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12" data-aos="fade-right">
-                        <video src='' controls class="giccl-video">
+                        <video src='./assets/videos/video_1.mp4' controls class="giccl-video">
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12" data-aos="fade-left">
-                        <video src='' controls class="giccl-video">
+                        <video src='./assets/videos/video_1.mp4' controls class="giccl-video">
                     </div>
                 </div>
             </div>
@@ -725,13 +769,14 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                 <div class="row justify-content-center mt-5">
                                 <div class="col-md-12">
                                     <div class="text-center mt-3 mb-3">
-                                        <a href="show_all_news.php" class="cta" style="text-decoration: none;">
+                                        <div><a href="show_all_news.php" class="brief-history-btn" style="text-decoration: none;">
                                             <span>Click Here To View All</span>
-                                            <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                            <!-- <svg width="15px" height="10px" viewBox="0 0 13 10">
                                             <path d="M1,5 L11,5"></path>
                                             <polyline points="8 1 12 5 8 9"></polyline>
-                                            </svg>
-                                        </a>
+                                            </svg> -->
+                                            <i class="fa fa-arrow-right pl-2"></i>
+                                        </a></div>
                                     </div>
                                 </div>
                                 </div>
@@ -784,13 +829,14 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                 <div class="row justify-content-center mt-5">
                                 <div class="col-md-12">
                                     <div class="text-center mt-3 mb-3">
-                                        <a href="show_all_news.php" class="cta" style="text-decoration: none;">
+                                        <div><a href="show_all_news.php" class="brief-history-btn" style="text-decoration: none;">
                                             <span>Click Here To Read All</span>
-                                            <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                            <i class="fa fa-arrow-right pl-2"></i>
+                                            <!-- <svg width="15px" height="10px" viewBox="0 0 13 10">
                                             <path d="M1,5 L11,5"></path>
                                             <polyline points="8 1 12 5 8 9"></polyline>
-                                            </svg>
-                                        </a>
+                                            </svg> -->
+                                        </a></div>
                                     </div>
                                 </div>
                                 </div>
@@ -828,13 +874,14 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         <div class="row justify-content-center mt-5">
           <div class="col-md-6">
             <div class="text-center mt-3 mb-3">
-                <a href="careers.php" class="cta" style="text-decoration: none;">
+                <div><a href="careers.php" class="brief-history-btn" style="text-decoration: none;">
                     <span>Click Here To View All</span>
-                    <svg width="15px" height="10px" viewBox="0 0 13 10">
+                    <i class="fa fa-arrow-right pl-2"></i>
+                    <!-- <svg width="15px" height="10px" viewBox="0 0 13 10">
                     <path d="M1,5 L11,5"></path>
                     <polyline points="8 1 12 5 8 9"></polyline>
-                    </svg>
-                </a>
+                    </svg> -->
+                </a></div>
             </div>
           </div>
         </div>

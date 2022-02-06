@@ -17,7 +17,7 @@
             /* box-shadow: 2px 2px 2px grey; */
         }
         .nav-link {
-            color: black;
+            color: #0B1D39;
             font-size: 18px;
         }
         .nav-link:hover {
@@ -341,7 +341,7 @@
                         <a href="blog.php" class=" nav-link">BLOG</a>
                         <span class="fa fa-caret-down "></span>
                     </a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="login_blog.php">Login</a>
                     <a class="dropdown-item" href="signup_blog.php">Signup</a>
                     </div>

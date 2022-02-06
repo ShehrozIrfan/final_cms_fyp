@@ -9,10 +9,12 @@
         /* ================ Footer PAGE ========================= */
 
         footer {
-            background: #FFEED8;
+            /* background: #FFEED8; */
+            background: #0E2D61;
             font-size: 12px;
             padding-top: 30px;
             padding-bottom: 20px;
+            color: white;
         }
         .footer-heading {
             font-size: 14px;
@@ -20,7 +22,11 @@
             font-weight: bold;
         }
         footer a {
-            color: black;
+            /* color: black; */
+            color: white;
+        }
+        footer a:hover {
+            color: white;
         }
         .footer-col {
             padding-left: 50px;
@@ -89,7 +95,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <hr>
+                    <hr style="border: 1px solid white; opacity: 0.5;">
                     <div class="text-center">GIGCCL &copy; 2021 - All Rights Reserved.</div>
                 </div>
             </div>
