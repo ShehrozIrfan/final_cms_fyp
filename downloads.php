@@ -179,6 +179,20 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                         </table>
                     </div>
                 </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 mt-4 mb-4">
+                    <div>
+                        <table class="table table-bordered">
+                            <tr class="downloads-heading">
+                                <td>Prospectus</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="to-download" href="assets/downloads-page/dummy-file.pdf" download>GIGCCL Prospectus</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
