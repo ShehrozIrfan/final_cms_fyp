@@ -194,6 +194,9 @@ if(isset($_GET['subscribe'])) {
       .table-responsive {
           border: none;
       }
+      .text-black {
+          color: black;
+      }
       @media(max-width: 600px) {
          .every-top-bg {
              min-height: 120px;
@@ -260,7 +263,14 @@ if(isset($_GET['subscribe'])) {
                                 </div> -->
                                     <tr>
                                         <td><?php echo $countNo; ?></td>
-                                        <td><?php echo $row['title']; ?>
+                                        <td>
+                                        <?php $ext = pathinfo($row['filename'], PATHINFO_EXTENSION); ?>
+                                        <?php if($ext == 'pdf' || $ext == 'gif') { ?>
+                                            <p title="Please click download to read it, because its a pdf or gif file"><?php echo $row['title']; ?></p>
+                                        <?php } else { ?>
+                                            <a href="show_specific_notice.php?id=<?php echo $row['id']; ?>" class="text-black" target="_blank"><?php echo $row['title']; ?></a>
+                                        <?php } ?>
+                                        </td>
                                         <td><?php echo $row['date']; ?>
                                         <td><a href="images/notice-images/<?php echo $row['filename']; ?>" title="click to download the notice" download class="btn btn-sm btn-dark"><span>Download</span></a></td>
                                     </tr>
