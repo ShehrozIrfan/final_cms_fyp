@@ -150,6 +150,12 @@ if(isset($_POST['apply-btn'])) {
       #apply-online-error {
           display: none;
       }
+      .text-black {
+          color: black;
+      }
+      .apply-online-modal-body {
+          padding: 30px;
+      }
         @media(max-width: 767px) {
             .img-gallery {
                 margin-bottom: 30px;
@@ -230,7 +236,9 @@ if(isset($_POST['apply-btn'])) {
                             </div> -->
                             <tr>
                                 <td><?php echo $countNo; ?></td>
-                                <td><?php echo $row['title']; ?></td>
+                                <td>
+                                    <a href="show_specific_career.php?id=<?php echo $row['id']; ?>" class="text-black" target="_blank"><?php echo $row['title']; ?></a>
+                                </td>
                                 <td><?php echo $row['last_date']; ?></td>
                                 <td><?php echo $row['date']; ?></td>
                                 <td><?php echo $row['status']; ?></td>
@@ -337,7 +345,7 @@ if(isset($_POST['apply-btn'])) {
 </html>
 
 
-<!-- Modal -->
+<!-- Modal Apply Online -->
 <div class="modal fade" id="applyOnlineModal" tabindex="-1" aria-labelledby="applyOnlineModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -347,7 +355,7 @@ if(isset($_POST['apply-btn'])) {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body apply-online-modal-body">
         <form action="careers.php" method="post" enctype="multipart/form-data">
             <div class="alert alert-danger" id="apply-online-error"></div>
             <input type="hidden" id="modal-career-id" name="career-id">

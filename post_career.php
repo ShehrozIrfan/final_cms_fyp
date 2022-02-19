@@ -209,6 +209,8 @@ if(isset($_POST['update'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- ckeditor -->
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     <style>
         #create_news {
             margin-top: 100px;
@@ -307,5 +309,24 @@ if(isset($_POST['update'])) {
         </div>
         </div>
     </section><!-- section create news ends -->
+
+
+    <script>
+    CKEDITOR.replace( 'description',
+	{
+        uiColor: '#CCEAEE',
+        toolbar :
+		[
+            { name: 'basicstyles', items : [ 'Bold','Italic','Strike','-','RemoveFormat' ] },
+            { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote' ] },
+            { name: 'links', items : [ 'Link','Unlink' ] },
+		    { name: 'tools', items : [ 'Maximize','-','About' ] },
+            { name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+		    { name: 'editing', items : [ 'Find','Replace','-','SelectAll' ] },
+            { name: 'insert', items : [ 'HorizontalRule','Smiley','SpecialChar','PageBreak'
+				  ] },
+		]
+	});
+    </script>
 </body>
 </html>
