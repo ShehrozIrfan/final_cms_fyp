@@ -36,6 +36,9 @@ if(isset($_POST['contact'])) {
             if(mail($toEmail, $subject, $body, $headers)) {
                 $msg = "Your message has been sent";
                 $msgClass = "success";
+                $name = '';
+                $email = '';
+                $message = '';
             } else {
                 $msg = "Sorry! something went wrong. Please try again.";
                 $msgClass = "danger";
