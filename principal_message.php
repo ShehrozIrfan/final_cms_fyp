@@ -49,7 +49,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
           text-decoration: underline;
       }
       .every-top-bg {
-          background: url('assets/images/every-page-top-bg.jpg');
+          /* background: url('assets/images/every-page-top-bg.jpg'); */
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -57,6 +57,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
           display: flex;
           align-items: center;
           justify-content: center;
+          background: #4169E1;
       }
       .every-top-heading {
           font-size: 35px;

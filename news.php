@@ -32,7 +32,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
           font-size: 16px;
         }
         #show_news {
-            margin-top: 20px;
+            margin-top: 120px;
         }
         .parent-news {
             border-radius: 10px;

@@ -32,7 +32,8 @@ if(isset($_SESSION['login_blog_user'])) {
           font-size: 16px;
         }
         .every-top-bg {
-          background: url('assets/images/every-page-top-bg.jpg');
+          /* background: url('assets/images/every-page-top-bg.jpg'); */
+          background: #4169E1;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -52,7 +53,7 @@ if(isset($_SESSION['login_blog_user'])) {
       .chevron-icon {
           font-size: 25px!important;
       }
-      .program-heading {
+      .parent-program-heading {
           display: flex;
       }
       .btn-link {
@@ -101,8 +102,8 @@ if(isset($_SESSION['login_blog_user'])) {
                <div class="accordion" id="accordionCampusLife">
                   <div class="card">
                      <div class="card-header" id="headingHostel">
-                           <h2 class="mb-0 program-heading">
-                              <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseHostel" aria-expanded="true" aria-controls="collapseHostel">
+                           <h2 class="mb-0 parent-program-heading">
+                              <div class="btn btn-link btn-block text-left program-heading" type="button" data-toggle="collapse" data-target="#collapseHostel" aria-expanded="true" aria-controls="collapseHostel">
                                  <strong>Crescent Hostel</strong>
                               </div>
                               <div>
@@ -148,8 +149,8 @@ if(isset($_SESSION['login_blog_user'])) {
                   </div>
                   <div class="card">
                      <div class="card-header" id="headingHostelLibraries">
-                           <h2 class="mb-0 program-heading">
-                              <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseLibraries" aria-expanded="true" aria-controls="collapseLibraries">
+                           <h2 class="mb-0 parent-program-heading">
+                              <div class="btn btn-link btn-block text-left program-heading" type="button" data-toggle="collapse" data-target="#collapseLibraries" aria-expanded="true" aria-controls="collapseLibraries">
                                  <strong>Libraries</strong>
                               </div>
                               <div>
@@ -205,8 +206,8 @@ if(isset($_SESSION['login_blog_user'])) {
                   </div>
                   <div class="card">
                      <div class="card-header" id="headingTransport">
-                           <h2 class="mb-0 program-heading">
-                              <div class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTransport" aria-expanded="true" aria-controls="collapseTransport">
+                           <h2 class="mb-0 parent-program-heading">
+                              <div class="btn btn-link btn-block text-left program-heading" type="button" data-toggle="collapse" data-target="#collapseTransport" aria-expanded="true" aria-controls="collapseTransport">
                                  <strong>Transport</strong>
                               </div>
                               <div>

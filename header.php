@@ -18,7 +18,7 @@
         }
         .nav-link {
             color: #0B1D39;
-            font-size: 18px;
+            font-size: 16px;
         }
         .nav-link:hover {
             color: black;
@@ -319,6 +319,17 @@
                     <a class="nav-link" href="downloads.php">DOWNLOADS</a>
                 </li>
                 <!-- Dropdown -->
+                <li class="nav-item center-nav-item dropdown">
+                    <a class="nav-link">
+                        <a href="blog.php" class=" nav-link">BLOG</a>
+                        <span class="fa fa-caret-down "></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="login_blog.php">Login</a>
+                    <a class="dropdown-item" href="signup_blog.php">Signup</a>
+                    </div>
+                </li><!-- Dropdown ends -->
+                <!-- Dropdown -->
                 <li class="nav-item dropdown center-nav-item">
                     <a class="nav-link">
                         <a href="#" class=" nav-link">MANAGEMENT</a>
@@ -335,17 +346,7 @@
                 <li class="nav-item nav-link-research pl-3">
                     <a class="nav-link" href="research.php">RESEARCH</a>
                 </li>
-                <!-- Dropdown -->
-                <li class="nav-item center-nav-item dropdown">
-                    <a class="nav-link">
-                        <a href="blog.php" class=" nav-link">BLOG</a>
-                        <span class="fa fa-caret-down "></span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="login_blog.php">Login</a>
-                    <a class="dropdown-item" href="signup_blog.php">Signup</a>
-                    </div>
-                </li><!-- Dropdown ends -->
+                
                   <li class="nav-item mr-5 d-none">
                     <a class="nav-link nav-link-login" href="login.php" id="loginBtn"><i class="fa fa-sign-in mr-2"></i>Login</a>
                   </li>

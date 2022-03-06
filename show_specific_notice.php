@@ -48,7 +48,8 @@ if(isset($_SESSION['login_blog_user'])) {
         }
 
         .every-top-bg {
-          background: url('assets/images/every-page-top-bg.jpg');
+          /* background: url('assets/images/every-page-top-bg.jpg'); */
+          background: #4169E1;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;

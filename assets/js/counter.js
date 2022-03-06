@@ -17,6 +17,7 @@ topCoord = Math.floor(topCoord / 2.5);
 var runCount = true;
 
 var topCoordNews = $('#s_news').offset().top
+var topCoordSlider = $('#topSlider').offset().top
 topCoordNews = Math.floor(topCoordNews / 2)
 
 $(window).scroll(function (event) {
@@ -24,7 +25,7 @@ $(window).scroll(function (event) {
    if(scroll >= topCoord && runCount) {
       start_counter_why_giccl();
    }
-   if(scroll >= topCoordNews) {
+   if(scroll >= topCoordSlider * 1.5) {
       $('.popup-fixed-notifications').fadeOut(1000);
       $('.popup-fixed-news').fadeOut(1000);
    }

@@ -13,6 +13,8 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     }
 ?>
 <?php
+$msg = '';
+$msgClass = '';
 if(isset($_POST['apply-btn'])) {
     //resume
     $filename = $_FILES["resume"]["name"];
@@ -124,7 +126,8 @@ if(isset($_POST['apply-btn'])) {
             cursor: pointer;
         }
         .every-top-bg {
-          background: url('assets/images/every-page-top-bg.jpg');
+          /* background: url('assets/images/every-page-top-bg.jpg'); */
+          background: #4169E1;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;

@@ -10,14 +10,14 @@
 
         footer {
             /* background: #FFEED8; */
-            background: #0E2D61;
-            font-size: 12px;
+            background: #4169E1;
+            font-size: 16px;
             padding-top: 30px;
             padding-bottom: 20px;
             color: white;
         }
         .footer-heading {
-            font-size: 14px;
+            font-size: 18px;
             color: #ff9000;
             font-weight: bold;
         }

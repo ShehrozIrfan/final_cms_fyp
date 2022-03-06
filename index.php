@@ -404,7 +404,8 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         .popup-fixed-notifications {
             position: fixed;
             bottom: 0px;
-            z-index: 1;
+            z-index: 10000;
+            font-size: 8px;
         }
         .popup-fixed-news {
             position: fixed;
@@ -483,7 +484,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 display: none;
             }
             .popup-fixed-notifications {
-                display: none;
+                /* display: none; */
             }
             .index-news-inner {
                 min-height: 400px;
@@ -502,7 +503,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         }
         @media(max-width: 600px) {
             .popup-fixed-notifications {
-                width: 80%;
+                width: 100%;
             }
             .counter {
                 font-size: 32px;
@@ -573,7 +574,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                     <?php if(mysqli_num_rows($result_notices_popup) != 0){ ?>
                         <?php while($row = mysqli_fetch_array($result_notices_popup)) { ?>
                             <div class="alert alert-danger alert-dismissible">
-                                <a href="images/notice-images/<?php echo $row['filename']; ?>" style="text-decoration: none; color: black; font-size: 14px;" class="small" download>
+                                <a href="show_specific_notice.php?id=<?php echo $row['id']; ?>" style="text-decoration: none; color: black; font-size: 14px;" class="small" target="_blank">
                                     <?php echo $row['title'] ?><span class="pl-2" style="color: red; font-weight: bold;">(Notice)</span>
                                 </a>
                                 <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
@@ -587,20 +588,20 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
         </div>
     </div><!-- notices pop up ends -->
     <!-- news pop up -->
-    <div class="container">
+    <div class="container d-none">
         <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-12 popup-fixed-news">
+            <div class="col-md-4 col-sm-12 col-xs-12 popup-fixed-news" style="position: absolute; z-index: 2;">
                 <?php if(mysqli_num_rows($result_popup) != 0){ ?>
                     <?php $popupNewsCount = 0; ?>
                     <?php while($row = mysqli_fetch_array($result_popup)) { ?>
                         <?php if($popupNewsCount == 3) { break; } ?>
                         <div class="alert alert-warning alert-dismissible">
-                            <a href="news.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: black; font-size: 14px; padding-left: 30px;" class="small" target="_blank">
-                                <?php echo $row['title'] ?><span class="pl-2" style="color: black; font-weight: bold;">(News)</span>
-                            </a>
-                            <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true" style="left: 0px;">
+                            <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
                                     ×
                             </button>
+                            <a href="news.php?id=<?php echo $row['id'] ?>" style="text-decoration: none; color: black; font-size: 14px;" class="small" target="_blank">
+                                <?php echo $row['title'] ?><span class="pl-2" style="color: black; font-weight: bold;">(News)</span>
+                            </a>
                         </div>
                         <?php $popupNewsCount = $popupNewsCount + 1; ?>
                     <?php } ?>
@@ -864,7 +865,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                     <span class="date-index-news d-block"><strong>Posted on:</strong> <?php echo $row['date']; ?></span>
                     <span class="date-index-news d-block"><strong>Last date:</strong> <?php echo $row['last_date']; ?></span>
                     <span class="date-index-news d-block"><strong>Status:</strong> <?php echo $row['status']; ?></span>
-                    <div><a class="btn-login btn-download-career" style="text-decoration: none;" href="images/career-images/<?php echo $row['filename']; ?>" class="img-index-news" download><span>Download Details</span></a></div>
+                    <div><a class="btn-login btn-download-career" style="text-decoration: none;" href="show_specific_career.php?id=<?php echo $row['id']; ?>" class="img-index-news"><span>Show Details</span></a></div>
                   </div>
                 </div>
               </div>
