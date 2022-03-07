@@ -258,11 +258,11 @@
                     <i class="fa fa-tasks mr-2"></i>Management
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Accounts Management</a>
-                    <a class="dropdown-item" href="#">Admission Management</a>
-                    <a class="dropdown-item" href="#">Attendance Management</a>
-                    <a class="dropdown-item" href="#">Examination Management</a>
-                    <a class="dropdown-item" href="#">Hostel Management</a>
+                    <a class="dropdown-item" href="account_management.php" target="_blank">Accounts Management</a>
+                    <a class="dropdown-item" href="admission_management.php" target="_blank">Admission Management</a>
+                    <a class="dropdown-item" href="attendance_management.php" target="_blank">Attendance Management</a>
+                    <a class="dropdown-item" href="examination_management.php" target="_blank">Examination Management</a>
+                    <a class="dropdown-item" href="hostel_management.php" target="_blank">Hostel Management</a>
                     </div>
                 </li><!-- Dropdown ends -->
                 <li class="nav-item mr-5">
@@ -336,17 +336,17 @@
                         <span class="fa fa-caret-down "></span>
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Accounts Management</a>
-                    <a class="dropdown-item" href="#">Admission Management</a>
-                    <a class="dropdown-item" href="#">Attendance Management</a>
-                    <a class="dropdown-item" href="#">Examination Management</a>
-                    <a class="dropdown-item" href="#">Hostel Management</a>
+                    <a class="dropdown-item" href="account_management.php" target="_blank">Accounts Management</a>
+                    <a class="dropdown-item" href="admission_management.php" target="_blank">Admission Management</a>
+                    <a class="dropdown-item" href="attendance_management.php" target="_blank">Attendance Management</a>
+                    <a class="dropdown-item" href="examination_management.php" target="_blank">Examination Management</a>
+                    <a class="dropdown-item" href="hostel_management.php" target="_blank">Hostel Management</a>
                     </div>
                 </li><!-- Dropdown ends -->
                 <li class="nav-item nav-link-research pl-3">
                     <a class="nav-link" href="research.php">RESEARCH</a>
                 </li>
-                
+
                   <li class="nav-item mr-5 d-none">
                     <a class="nav-link nav-link-login" href="login.php" id="loginBtn"><i class="fa fa-sign-in mr-2"></i>Login</a>
                   </li>
