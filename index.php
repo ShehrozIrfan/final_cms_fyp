@@ -646,7 +646,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
     <section id="section-welcome-to-giccl">
         <div class="header_parallax parallax">
         <div class="container" data-aos="fade-right">
-                <div class="row header_parallax_text">
+                <div class="row header_parallax_text justify-content-center text-center">
                   <div class="col-md-6 col-sm-12 col-xs-12 parent-welcome-text">
                         <div>
                             <h2 class="">Welcome to GIGCCL</h2>
