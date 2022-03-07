@@ -127,7 +127,8 @@ if(isset($_POST['apply-btn'])) {
         }
         .every-top-bg {
           /* background: url('assets/images/every-page-top-bg.jpg'); */
-          background: #4169E1;
+          /* background: #4169E1; */
+          background: #FFEED8;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -139,7 +140,7 @@ if(isset($_POST['apply-btn'])) {
       .every-top-heading {
           font-size: 35px;
           font-weight: bold;
-          color: white;
+          color: black;
       }
       .file-icon {
           color: black;

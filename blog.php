@@ -263,7 +263,8 @@ if(!$result_all) {
     }
     .every-top-bg {
         /* background: url('assets/images/every-page-top-bg.jpg'); */
-        background: #4169E1;
+        /* background: #4169E1; */
+        background: #FFEED8;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -275,7 +276,7 @@ if(!$result_all) {
     .every-top-heading {
         font-size: 35px;
         font-weight: bold;
-        color: white;
+        color: black;
     }
     @media(max-width: 600px) {
          .every-top-bg {

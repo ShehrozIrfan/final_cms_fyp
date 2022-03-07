@@ -33,7 +33,8 @@ if(isset($_SESSION['login_blog_user'])) {
         }
         .every-top-bg {
           /* background: url('assets/images/every-page-top-bg.jpg'); */
-          background: #4169E1;
+          /* background: #4169E1; */
+          background: #FFEED8;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -45,7 +46,7 @@ if(isset($_SESSION['login_blog_user'])) {
       .every-top-heading {
           font-size: 35px;
           font-weight: bold;
-          color: white;
+          color: black;
       }
       #campus_life {
          margin-top: 95px;

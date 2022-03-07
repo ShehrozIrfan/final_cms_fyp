@@ -9,8 +9,8 @@
         /* ================ Footer PAGE ========================= */
 
         footer {
-            /* background: #FFEED8; */
-            background: #4169E1;
+            background: #FFEED8;
+            /* background: #4169E1; */
             font-size: 16px;
             padding-top: 30px;
             padding-bottom: 20px;
@@ -22,8 +22,8 @@
             font-weight: bold;
         }
         footer a {
-            /* color: black; */
-            color: white;
+            color: black;
+            /* color: white; */
         }
         footer a:hover {
             color: white;
@@ -95,8 +95,8 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <hr style="border: 1px solid white; opacity: 0.5;">
-                    <div class="text-center">GIGCCL &copy; 2021 - All Rights Reserved.</div>
+                    <hr style="border: 1px solid black; opacity: 0.5;">
+                    <div class="text-center" style="color: black;">GIGCCL &copy; 2021 - All Rights Reserved.</div>
                 </div>
             </div>
         </div>

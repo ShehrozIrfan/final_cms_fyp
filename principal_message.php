@@ -57,12 +57,13 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #4169E1;
+          /* background: #4169E1; */
+          background: #FFEED8;
       }
       .every-top-heading {
           font-size: 35px;
           font-weight: bold;
-          color: white;
+          color: black;
       }
       @media(max-width: 600px) {
         .every-top-bg {
