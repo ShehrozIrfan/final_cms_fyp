@@ -450,6 +450,11 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 /* margin-left: auto; */
             }
         }
+        @media(max-width: 992px) {
+            .principal-message-text {
+                margin-top: 20px;
+            }
+        }
         @media (max-width: 768px) {
             .box_ms h4 {
                 font-size: 18px;
@@ -674,11 +679,11 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
             <div class="principal-message">
                 <h2 class="text-center font-weight-bold mb-5 principal-message-heading">Message of The Principal</h2>
                 <div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12" data-aos="fade-right">
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 text-center" data-aos="fade-right">
                         <img class="principal-img" src="assets/images/principal.jpeg">
                     </div>
-                    <div class="col-md-7 col-sm-12 col-xs-12" data-aos="fade-left" data-aos-delay="500">
-                        <div class="principal-message-text">
+                    <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12" data-aos="fade-left" data-aos-delay="500">
+                        <div class="principal-message-text text-center">
                             <div>
                                 <p>Dear Students,</p>
                                 <p>Education is an epithet which distinguishes man from the rest of the creatures of Allah. The significance of learning cannot be overlooked as it helps man to explore new vistas and dimensions of life. It enables him to excel over his fellow beings and secure a place of distinction. As the human civilization is making great strides forward, it is offering man a highly competitive environment in which survival and well-being is for those who can move ahead at the required pace.</p>
@@ -703,7 +708,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                 <h2 class="text-center font-weight-bold mb-4 principal-message-heading">Why GIGCCL</h2>
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="text-why-giccl">Government Islamia College, Civil Lines, Lahore is one of the top-ranking institutions of Punjab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quas cupiditate velit nobis quae maxime, exercitationem distinctio quisquam blanditiis nemo.</p>
+                        <p class="text-why-giccl text-center">Government Islamia College, Civil Lines, Lahore is one of the top-ranking institutions of Punjab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quas cupiditate velit nobis quae maxime, exercitationem distinctio quisquam blanditiis nemo.</p>
                     </div>
                 </div>
                 <div class="row">
