@@ -26,7 +26,7 @@
             /* color: white; */
         }
         footer a:hover {
-            color: white;
+            color: black;
         }
         .footer-col {
             padding-left: 50px;
