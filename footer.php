@@ -44,32 +44,32 @@
                 <div class="col-md-3 footer-col">
                     <div>
                         <p class="footer-heading">Important Links</p>
-                        <p><a href="http://www.pu.edu.pk/">University of the Punjab</a></p>
-                        <p><a href="http://www.biselahore.com/">BISE Lahore</a></p>
-                        <p><a href="https://www.hec.gov.pk/english/pages/home.aspx">Higher Education Commission(HEC)</a></p>
-                        <p><a href="https://pitb.gov.pk/">Punjab Information Technology Board</a></p>
+                        <p><a href="http://www.pu.edu.pk/" target="_blank">University of the Punjab</a></p>
+                        <p><a href="http://www.biselahore.com/" target="_blank">BISE Lahore</a></p>
+                        <p><a href="https://www.hec.gov.pk/english/pages/home.aspx" target="_blank">Higher Education Commission(HEC)</a></p>
+                        <p><a href="https://pitb.gov.pk/" target="_blank">Punjab Information Technology Board</a></p>
                     </div>
                 </div>
                 <div class="col-md-3 footer-col">
                     <div>
                         <p class="footer-heading">Quick Links</p>
-                        <p><a href="show_all_news.php">News</a></p>
-                        <p><a href="notice.php">Notice Board</a></p>
-                        <p><a href="programs_offered.php">Programs Offered</a></p>
-                        <p><a href="">Careers</a></p>
-                        <p><a href="">Research</a></p>
-                        <p><a href="">Departments</a></p>
-                        <p><a href="">Downloads</a></p>
+                        <p><a href="show_all_news.php" target="_blank">News</a></p>
+                        <p><a href="notice.php" target="_blank">Notice Board</a></p>
+                        <p><a href="programs_offered.php" target="_blank">Programs Offered</a></p>
+                        <p><a href="careers.php" target="_blank">Careers</a></p>
+                        <p><a href="research.php" target="_blank">Research</a></p>
+                        <p><a href="faculty.php" target="_blank">Faculty</a></p>
+                        <p><a href="downloads.php" target="_blank">Downloads</a></p>
                     </div>
                 </div>
                 <div class="col-md-3 footer-col">
                     <div>
                         <p class="footer-heading">Management</p>
-                        <p><a href="">Accounts Management</a></p>
-                        <p><a href="">Admission Management</a></p>
-                        <p><a href="">Examinations Management</a></p>
-                        <p><a href="">Attendance Management</a></p>
-                        <p><a href="">Hostel Management</a></p>
+                        <p><a href="account_management.php" target="_blank">Accounts Management</a></p>
+                        <p><a href="admission_management.php" target="_blank">Admission Management</a></p>
+                        <p><a href="examination_management.php" target="_blank">Examinations Management</a></p>
+                        <p><a href="attendance_management.php" target="_blank">Attendance Management</a></p>
+                        <p><a href="hostel_management.php" target="_blank">Hostel Management</a></p>
                     </div>
                 </div>
                 <div class="col-md-3 footer-col">
