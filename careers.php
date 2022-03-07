@@ -315,11 +315,11 @@ if(isset($_POST['apply-btn'])) {
                 error_msg.css('display', 'block');
                 error_msg.text("Please enter a valid email address!");
                 submitForm = false;
-            } else if(cnic.trim().length < 13 || !cnic.match(number_regex)){
+            } else if(cnic.trim().length < 13 || cnic.trim().length > 13 || !cnic.match(number_regex)){
                 error_msg.css('display', 'block');
                 error_msg.text("Please enter a valid CNIC number of 13 digits without any '-'");
                 submitForm = false;
-            } else if(contact.trim().length < 11 || !contact.match(number_regex)) {
+            } else if(contact.trim().length < 11 || contact.trim().length > 11 || !contact.match(number_regex)) {
                 error_msg.css('display', 'block');
                 error_msg.text("Please enter a valid phone number with 11 digits without any '-' and '+' ");
                 submitForm = false;
