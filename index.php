@@ -835,7 +835,7 @@ if(isset($_SESSION['login_user']) || isset($_SESSION['login_blog_user']))
                                 <div class="row justify-content-center mt-5">
                                 <div class="col-md-12">
                                     <div class="text-center mt-3 mb-3">
-                                        <div><a href="show_all_news.php" class="brief-history-btn" style="text-decoration: none;">
+                                        <div><a href="blog.php" class="brief-history-btn" style="text-decoration: none;">
                                             <span>Click Here To Read All</span>
                                             <i class="fa fa-arrow-right pl-2"></i>
                                             <!-- <svg width="15px" height="10px" viewBox="0 0 13 10">
