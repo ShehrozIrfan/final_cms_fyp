@@ -49,4 +49,23 @@ function start_counter_why_giccl() {
         }
       );
   });
+
+  //start the counter from number to 0
+  // $('.counter').each(function () {
+  //   $(this)
+  //     .data('start', parseInt($(this).text()))
+  //     .prop('Counter', 0)
+  //     .animate(
+  //       {
+  //         Counter: $(this).text(),
+  //       },
+  //       {
+  //         duration: 4000,
+  //         easing: 'swing',
+  //         step: function (now) {
+  //           $(this).text($(this).data('start') - Math.ceil(now));
+  //         },
+  //       }
+  //     );
+  // });
 }
